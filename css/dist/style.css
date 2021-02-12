@@ -164,6 +164,6 @@ body {
     transform: translate(-10px, -148px) scale(0.5);
   }
   .container .container-text {
-    margin: 0;
+    margin: 0 0 15px;
   }
 }
