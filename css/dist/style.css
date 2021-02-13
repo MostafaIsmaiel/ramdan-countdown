@@ -232,6 +232,10 @@ body {
   }
 }
 @media (max-width: 750px) {
+  body {
+    overflow: visible;
+  }
+
   .container .container-moon {
     transform: scale(1);
     z-index: 2;
