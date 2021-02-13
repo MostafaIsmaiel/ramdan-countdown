@@ -12,6 +12,7 @@ body {
   background: url("../../images/background.svg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .container {
@@ -91,7 +92,7 @@ body {
   animation: lantern-1 2s 1 ease-in-out;
 }
 .container .container-shapes .container-shape:nth-child(1) .container-shapeImg {
-  animation-delay: spin 0.1s;
+  animation-delay: 0.1s;
 }
 .container .container-shapes .container-shape:nth-child(2) {
   animation: lantern-2 2s 1 ease-in-out;
