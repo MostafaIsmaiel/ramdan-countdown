@@ -121,7 +121,7 @@ body {
   transform: translate(70px, -72px) scale(0.6);
 }
 .container .container-stars .container-star:nth-child(2) {
-  animation-delay: 0.5s;
+  animation-delay: -0.45s;
 }
 .container .container-stars .container-star:nth-child(2) .container-starImg {
   transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
