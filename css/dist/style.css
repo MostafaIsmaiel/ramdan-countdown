@@ -255,4 +255,7 @@ body {
   .container .container-text {
     margin: 0 0 15px;
   }
+  .signture {
+    padding: 0 0 15px 0;
+  }
 }
