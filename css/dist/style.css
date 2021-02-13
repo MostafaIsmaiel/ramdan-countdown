@@ -40,7 +40,7 @@ body {
 }
 .container .container-specialWord {
   color: #EBC882;
-  text-shadow: 2px 2px 5px #EBC882;
+  text-shadow: 0px 0px 5px #ffca5e;
 }
 .container .container-remaining {
   font-size: 20px;
@@ -162,10 +162,8 @@ body {
 .signture a {
   text-decoration: none;
   font-weight: 700;
-  color: white;
-}
-.signture a:visited {
-  color: #8aefc8;
+  color: #EBC882;
+  text-shadow: 0px 0px 5px #b37800;
 }
 
 @keyframes spin {
