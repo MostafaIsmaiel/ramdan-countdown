@@ -13,6 +13,10 @@ body {
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container {
