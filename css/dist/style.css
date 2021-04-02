@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -12,147 +13,242 @@ body {
   background: url("../../images/background.svg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
-  overflow: hidden;
+}
+
+.main-container {
+  direction: rtl;
+}
+.main-container .container-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
-.container {
-  direction: rtl;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 0;
-}
-.container .container-content {
+.main-container .container-a .container-content {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  padding: 15px;
+  margin-top: 60px;
   z-index: 1;
 }
-.container .container-text {
+.main-container .container-a .container-moon {
+  z-index: 1;
+  opacity: 1;
+  position: relative;
+  animation: moon 2s 1 ease-in-out;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.main-container .container-a .container-shapes {
+  display: flex;
+}
+.main-container .container-a .container-shapes .container-shape {
+  filter: drop-shadow(4px 3px 5px #b37800);
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(1) {
+  transform: translate(0px, -125px) scale(0.5);
+  position: relative;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(2) {
+  transform: translate(0px, -55px) scale(0.65);
+  position: relative;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(3) {
+  transform: translate(-5px, -117px) scale(0.58);
+  position: relative;
+}
+.main-container .container-a .container-shapes .container-shape .container-shapeImg {
+  animation: spin 1s infinite alternate ease-in-out;
+  transform-origin: top;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(1) {
+  animation: lantern-1 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(1) .container-shapeImg {
+  animation-delay: 0.1s;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(2) {
+  animation: lantern-2 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(2) .container-shapeImg {
+  animation-delay: 0.5s;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(3) {
+  animation: lantern-3 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(3) .container-shapeImg {
+  animation-delay: 0.7s;
+}
+.main-container .container-a .container-stars {
+  display: flex;
+}
+.main-container .container-a .container-stars .container-star {
+  position: absolute;
+  top: 60%;
+  animation: fade 1s infinite alternate ease-in-out;
+  z-index: -1;
+  filter: drop-shadow(0px 0px 5px #b37800);
+}
+.main-container .container-a .container-stars .container-star:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(1) .container-starImg {
+  transform: translate(70px, -72px) scale(0.6);
+}
+.main-container .container-a .container-stars .container-star:nth-child(2) {
+  animation-delay: -0.45s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(2) .container-starImg {
+  transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(3) .container-starImg {
+  transform: translate(172px, -103px) scale(0.7) rotate(-40deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(4) .container-starImg {
+  transform: translate(-150px, -50px) scale(0.6) rotate(30deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(5) {
+  animation-delay: 0.7s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(5) .container-starImg {
+  transform: translate(-10px, -30px) scale(0.9) rotate(107deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(6) .container-starImg {
+  transform: translate(60px, -2px) scale(0.85) rotate(156deg);
+}
+.main-container .container-text {
   font-size: 32px;
   font-weight: 700;
+  color: white;
   margin: 45px 0 15px;
   position: relative;
   animation: lantern-3 2s 1 ease-in-out;
 }
-.container .container-specialWord {
+.main-container .container-text .container-textFrom {
+  display: none;
+  color: white;
+}
+.main-container .container-text .container-specialWord {
   color: #EBC882;
   text-shadow: 0px 0px 5px #ffca5e;
 }
-.container .container-remaining {
+.main-container .container-remaining {
+  color: white;
   font-size: 20px;
   font-weight: 700;
   position: relative;
   animation: lantern-1 2s 1 ease-in-out;
 }
-.container .container-remainingTime {
+.main-container .container-remaining .container-remainingTime {
   font-size: 45px;
   font-weight: 300;
 }
-.container .container-textFrom {
+.main-container .container--duringRamdan .container-textTo {
   display: none;
 }
-.container .container--duringRamdan .container-textTo {
-  display: none;
-}
-.container .container--duringRamdan .container-textFrom {
+.main-container .container--duringRamdan .container-textFrom {
   display: inline-block;
 }
-.container .container-moon {
-  z-index: 1;
-  transform: scale(1.3);
-  opacity: 1;
-  position: relative;
-  animation: moon 2s 1 ease-in-out;
+.main-container .nav-bar {
+  position: fixed;
 }
-.container .container-shapes {
+.main-container .nav-bar ul {
+  text-align: right;
+  padding: 15px;
+  color: wheat;
+}
+.main-container .nav-bar ul li {
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.main-container .nav-bar ul li i {
+  padding-left: 5px;
+}
+.main-container .aya {
+  height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: wheat;
+  filter: drop-shadow(2px 4px 6px black);
 }
-.container .container-shapes .container-shape:nth-child(1) {
-  transform: translate(30px, -82px) scale(0.75);
-  position: relative;
+.main-container .aya h2 {
+  margin: 15px 0;
 }
-.container .container-shapes .container-shape:nth-child(2) {
-  transform: translate(0px, 10px) scale(0.9);
-  position: relative;
+.main-container .aya p {
+  margin: 15px 0;
 }
-.container .container-shapes .container-shape:nth-child(3) {
-  transform: translate(-36px, -100px) scale(0.75);
-  position: relative;
+.main-container .prayer {
+  color: wheat;
 }
-.container .container-shapes .container-shape .container-shapeImg {
-  animation: spin 1s infinite alternate ease-in-out;
-  transform-origin: top;
-}
-.container .container-shapes .container-shape:nth-child(1) {
-  animation: lantern-1 2s 1 ease-in-out;
-}
-.container .container-shapes .container-shape:nth-child(1) .container-shapeImg {
-  animation-delay: 0.1s;
-}
-.container .container-shapes .container-shape:nth-child(2) {
-  animation: lantern-2 2s 1 ease-in-out;
-}
-.container .container-shapes .container-shape:nth-child(2) .container-shapeImg {
-  animation-delay: 0.5s;
-}
-.container .container-shapes .container-shape:nth-child(3) {
-  animation: lantern-3 2s 1 ease-in-out;
-}
-.container .container-shapes .container-shape:nth-child(3) .container-shapeImg {
-  animation-delay: 0.7s;
-}
-.container .container-stars {
-  display: flex;
-}
-.container .container-stars .container-star {
+.main-container .prayer .prayer-container {
+  font-family: "Fjalla One", sans-serif;
   position: absolute;
-  top: 50%;
-  animation: fade 1s infinite alternate ease-in-out;
+  right: 20px;
+  top: 20%;
+  text-align: right;
 }
-.container .container-stars .container-star:nth-child(1) {
-  animation-delay: 0.3s;
+.main-container .prayer .prayer-container .city-list {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 2px solid wheat;
+  color: wheat;
 }
-.container .container-stars .container-star:nth-child(1) .container-starImg {
-  transform: translate(70px, -72px) scale(0.6);
+.main-container .prayer .prayer-container .city-list option {
+  color: #55430c;
 }
-.container .container-stars .container-star:nth-child(2) {
-  animation-delay: -0.45s;
+.main-container .prayer .prayer-container .city-list option:disabled {
+  color: #908565;
 }
-.container .container-stars .container-star:nth-child(2) .container-starImg {
-  transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
+.main-container .prayer .prayer-container .pray-list {
+  font-size: 14px;
+  border: 2px solid wheat;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  background-color: #00000066;
+  transition: all 0.3s ease-in-out;
 }
-.container .container-stars .container-star:nth-child(3) {
-  animation-delay: 0.1s;
+.main-container .prayer .prayer-container .pray-list .pray-info {
+  position: relative;
 }
-.container .container-stars .container-star:nth-child(3) .container-starImg {
-  transform: translate(172px, -103px) scale(0.7) rotate(-40deg);
+.main-container .prayer .prayer-container .pray-list .pray-info::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: wheat;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
 }
-.container .container-stars .container-star:nth-child(4) {
-  animation-delay: 0.4s;
+.main-container .prayer .prayer-container .pray-list .pray-info:last-child::after {
+  display: none;
 }
-.container .container-stars .container-star:nth-child(4) .container-starImg {
-  transform: translate(-150px, -50px) scale(0.6) rotate(30deg);
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-name {
+  margin: 10px 0;
 }
-.container .container-stars .container-star:nth-child(5) {
-  animation-delay: 0.7s;
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
+  margin-bottom: 10px;
 }
-.container .container-stars .container-star:nth-child(5) .container-starImg {
-  transform: translate(-10px, -30px) scale(0.9) rotate(107deg);
-}
-.container .container-stars .container-star:nth-child(6) .container-starImg {
-  transform: translate(60px, -2px) scale(0.85) rotate(156deg);
-}
-
-.signture {
+.main-container .signture {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -161,16 +257,15 @@ body {
   color: white;
   font-size: 16px;
 }
-.signture i {
+.main-container .signture i {
   color: #b60101;
 }
-.signture a {
+.main-container .signture a {
   text-decoration: none;
   font-weight: 700;
   color: #EBC882;
   text-shadow: 0px 0px 5px #b37800;
 }
-
 @keyframes spin {
   from {
     transform: rotate(-3deg);
@@ -227,39 +322,63 @@ body {
     opacity: 1;
   }
 }
-@keyframes heart {
-  from {
-    font-size: 16px;
-  }
-  to {
-    font-size: 20px;
-  }
-}
-@media (max-width: 750px) {
+
+@media (max-width: 768px) {
   body {
     overflow: visible;
   }
 
-  .container .container-moon {
+  .main-container .container-a .container-moon {
     transform: scale(1);
     z-index: 2;
   }
-  .container .container-shapes {
+  .main-container .container-a .container-shapes {
     z-index: 1;
   }
-  .container .container-shapes .container-shape:nth-child(1) {
+  .main-container .container-a .container-shapes .container-shape:nth-child(1) {
     transform: translate(0px, -130px) scale(0.5);
   }
-  .container .container-shapes .container-shape:nth-child(2) {
+  .main-container .container-a .container-shapes .container-shape:nth-child(2) {
     transform: translate(0px, -58px) scale(0.65);
   }
-  .container .container-shapes .container-shape:nth-child(3) {
+  .main-container .container-a .container-shapes .container-shape:nth-child(3) {
     transform: translate(-10px, -148px) scale(0.5);
   }
-  .container .container-text {
+  .main-container .container-text {
     margin: 0 0 15px;
   }
-  .signture {
+  .main-container .nav-bar {
+    position: relative;
+  }
+  .main-container .prayer {
+    direction: ltr;
+  }
+  .main-container .prayer .prayer-container {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    top: unset;
+    font-size: 10px;
+  }
+  .main-container .prayer .prayer-container .city-list {
+    width: unset;
+  }
+  .main-container .prayer .prayer-container .pray-list {
+    padding: 0px;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info::after {
+    display: none;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info .pray-name,
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
+    margin: 5px 0;
+  }
+  .main-container .signture {
     padding: 0 0 15px 0;
   }
 }
