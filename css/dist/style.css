@@ -348,6 +348,9 @@ body {
   .main-container .container-a .container-shapes .container-shape:nth-child(3) {
     transform: translate(-10px, -148px) scale(0.5);
   }
+  .main-container .container-a .container-stars .container-star {
+    filter: unset;
+  }
   .main-container .container-text {
     margin: 0 0 15px;
   }
