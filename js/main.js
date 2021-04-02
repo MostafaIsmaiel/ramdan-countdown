@@ -1,3 +1,4 @@
+// Calculation ramadan count down
 (function () {
     let remainingTimeElement = $(".container-remainingTime"),
         todayGeorgianDate = moment(),
@@ -23,8 +24,25 @@
     remainingTimeElement.text(Math.abs(diff).toLocaleString("ar-sa"));
 })();
 
+// variables
 let city = $('#city-list'),
-    prayList = $("#pray-list");
+    prayList = $("#pray-list"),
+    imsak = $('#imsak'),
+    imsakOverLay = $('#over-lay'),
+    imsakClose = $('#imsak-close'),
+    imsakBtn = $('#imsak-btn'),
+    morningAzkar = $('#morning-azkar'),
+    morningAzkarOverlay = $('#morning-azkar-overlay'),
+    morningAzkarClose = $('#morning-azkar-close'),
+    morningAzkarBtn = $('#morning-azkar-btn'),
+    morningAzkarList = $('#morning-azkar-list'),
+    eveningAzkar = $('#evening-azkar'),
+    eveningAzkarOverlay = $('#evening-azkar-overlay'),
+    eveningAzkarClose = $('#evening-azkar-close'),
+    eveningAzkarBtn = $('#evening-azkar-btn'),
+    eveningAzkarList = $('#evening-azkar-list');
+
+
 
 // Fetch prayer times
 function getPrayerTime() {
@@ -54,10 +72,116 @@ function getPrayerTime() {
     });
 };
 
+// Fetch morning azkar
+function getMorningAzkar() {
+    $.ajax({
+        method: "GET",
+        url: "json/azkar.json",
+        success: function (response, status, request) {
+            for (let i = 0; i <= response.length - 1; i += 1) {
+                if (response[i].category !== 'أذكار الصباح') {
+                    continue;
+                }
+                // console.log(response[i]);
+                $(`<li class="azkar-info">
+                <p class='azkar-name'>Zekr: ${response[i].zekr}</p>
+                <p class='azkar-count'>Count: " ${response[i].count} "</p>
+                </li>`).appendTo(morningAzkarList);
+            }
+        }
+    });
+};
+getMorningAzkar();
+
+// Fetch evening azkar
+function getEveningAzkar() {
+    $.ajax({
+        method: "GET",
+        url: "json/azkar.json",
+        success: function (response, status, request) {
+            for (let i = 0; i <= response.length - 1; i += 1) {
+                if (response[i].category !== 'أذكار المساء') {
+                    continue;
+                }
+                console.log(response[i]);
+                $(`<li class="azkar-info">
+                <p class='azkar-name'>Zekr: ${response[i].zekr}</p>
+                <p class='azkar-count'>Count: " ${response[i].count} "</p>
+                </li>`).appendTo(eveningAzkarList);
+            }
+        }
+    });
+};
+getEveningAzkar();
+
+// Auto fade out
+(function autoFadOut() {
+    imsak.fadeOut(0);
+    morningAzkar.fadeOut(0);
+    eveningAzkar.fadeOut(0);
+})();
+
+
 // Add event listner
+
 city.on('change', function () {
     prayList.html(`<div class="spinner-border" role="status">
   <span class="sr-only">Loading...</span>
 </div>`);
     getPrayerTime();
+});
+
+// Fade out/in ramdan imsak
+imsakBtn.on('click', function () {
+    imsak.fadeIn();
+    $('html').css('overflow', 'hidden');
+});
+
+imsakClose.on('click', function () {
+    imsak.fadeOut();
+    $('html').css('overflow', 'unset');
+
+});
+
+imsakOverLay.on('click', function () {
+    imsak.fadeOut();
+    $('html').css('overflow', 'unset');
+
+});
+
+
+// Fade out/in morning azkar
+morningAzkarBtn.on('click', function () {
+    morningAzkar.fadeIn();
+    $('html').css('overflow', 'hidden');
+});
+
+morningAzkarClose.on('click', function () {
+    morningAzkar.fadeOut();
+    $('html').css('overflow', 'unset');
+
+});
+
+morningAzkarOverlay.on('click', function () {
+    morningAzkar.fadeOut();
+    $('html').css('overflow', 'unset');
+
+});
+
+// Fade out/in evening azkar
+eveningAzkarBtn.on('click', function () {
+    eveningAzkar.fadeIn();
+    $('html').css('overflow', 'hidden');
+});
+
+eveningAzkarClose.on('click', function () {
+    eveningAzkar.fadeOut();
+    $('html').css('overflow', 'unset');
+
+});
+
+eveningAzkarOverlay.on('click', function () {
+    eveningAzkar.fadeOut();
+    $('html').css('overflow', 'unset');
+
 });
