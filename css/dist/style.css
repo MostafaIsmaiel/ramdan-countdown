@@ -329,11 +329,15 @@ body {
   }
 
   .main-container .container-a .container-moon {
+    filter: unset;
     transform: scale(1);
     z-index: 2;
   }
   .main-container .container-a .container-shapes {
     z-index: 1;
+  }
+  .main-container .container-a .container-shapes .container-shape {
+    filter: unset;
   }
   .main-container .container-a .container-shapes .container-shape:nth-child(1) {
     transform: translate(0px, -130px) scale(0.5);
