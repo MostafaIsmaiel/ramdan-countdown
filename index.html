@@ -42,23 +42,26 @@
             Your browser does not support the audio element.
         </audio>
         <div class="container">
-            <div class="row">
-                <div class="col-md-1"></div>
+            <div class="row justify-content-end">
                 <div class="col-md-6">
                     <nav class="nav-bar">
-                        <ul class="list-unstyled">
-                            <li>
+                        <ul class="list-unstyled nav-list">
+                            <li id="imsak-btn" class="nav-li">
                                 <i class="fas fa-mosque"></i>
                                 إامساكية رمضان
-                            <li>
+                            <li id="azkar-btn "class="nav-li">
                                 <i class="fas fa-book-open"></i>
                                 أذكار
+                                <ul class="list-unstyled zekr-list">
+                                    <li id="morning-azkar-btn">أذكار الصباح</li>
+                                    <li id="evening-azkar-btn">أذكار المساء</li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
                     <div class="aya">
-                        <h2>بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
-                        <p>شَهْرُ رَمَضَانَ الَّذِي أُنْزِلَ فِيهِ الْقُرْآنُ هُدىً لِلنَّاسِ وَبَيِّنَاتٍ مِنَ الْهُدَى
+                        <h2 class="h1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
+                        <p class="lead">شَهْرُ رَمَضَانَ الَّذِي أُنْزِلَ فِيهِ الْقُرْآنُ هُدىً لِلنَّاسِ وَبَيِّنَاتٍ مِنَ الْهُدَى
                             وَالْفُرْقَانِ</p>
                     </div>
                 </div>
@@ -103,6 +106,7 @@
             </div>
             <section class="prayer">
                 <div class="prayer-container text-center">
+                    <p class="lead">Choose Your City</p>
                     <select class="city-list" id="city-list">
                         <option value="" selected disabled>City...</option>
                         <option value="cairo">Cairo</option>
@@ -116,7 +120,7 @@
                         <option value="sohag">Sohag</option>
                     </select>
                     <ul id="pray-list" class="list-unstyled text-center pray-list">
-
+                        <li>-</li>
                     </ul>
                 </div>
             </section>
@@ -137,6 +141,370 @@
                 <a href="https://github.com/MostafaIsmaiel" target="_blank">Mostafa Ismaiel</a>
             </p>
         </div>
+    </section>
+    <section class="imsak text-center" id="imsak">
+        <span id="imsak-close" class="close"><i class="fas fa-times"></i></span>
+        <div class="over-lay" id="over-lay"></div>
+        <table class="table table-striped imsak-table text-center">
+            <thead>
+                <tr>
+                    <th>اليوم</th>
+                    <th>رمضان</th>
+                    <th>ميلادى</th>
+                    <th>الفجر</th>
+                    <th>الشروق</th>
+                    <th>الظهر</th>
+                    <th>العصر</th>
+                    <th>المغرب</th>
+                    <th>العشاء</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>1 رمضان</td>
+                    <td>13 ابريل</td>
+                    <td>04:00 ص</td>
+                    <td>05:30 ص</td>
+                    <td>11:55 ص</td>
+                    <td>03:30 م</td>
+                    <td>06:21 م</td>
+                    <td>07:41 م</td>
+                </tr>
+                <tr>
+                    <td>الاربعاء</td>
+                    <td>2 رمضان</td>
+                    <td>14 ابريل</td>
+                    <td>03:59 ص</td>
+                    <td>05:29 ص</td>
+                    <td>11:55 ص</td>
+                    <td>03:30 م</td>
+                    <td>06:21 م</td>
+                    <td>07:42 م</td>
+                </tr>
+                <tr>
+                    <td>الخميس</td>
+                    <td>3 رمضان</td>
+                    <td>15 ابريل</td>
+                    <td>03:58 ص</td>
+                    <td>05:28 ص</td>
+                    <td>11:55 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:22 م</td>
+                    <td>07:42 م</td>
+                </tr>
+                <tr>
+                    <td>الجمعة</td>
+                    <td>4 رمضان</td>
+                    <td>16 ابريل</td>
+                    <td>03:56 ص</td>
+                    <td>05:27 ص</td>
+                    <td>11:55 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:22 م</td>
+                    <td>07:43 م</td>
+                </tr>
+                <tr>
+                    <td>السبت</td>
+                    <td>5 رمضان</td>
+                    <td>17 ابريل</td>
+                    <td>03:55 ص</td>
+                    <td>05:26 ص</td>
+                    <td>11:54 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:23 م</td>
+                    <td>07:44 م</td>
+                </tr>
+                <tr>
+                    <td>الاحد</td>
+                    <td>6 رمضان</td>
+                    <td>18 ابريل</td>
+                    <td>03:54 ص</td>
+                    <td>05:25 ص</td>
+                    <td>11:54 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:24 م</td>
+                    <td>07:45 م</td>
+                </tr>
+                <tr>
+                    <td>الاثنين</td>
+                    <td>7 رمضان</td>
+                    <td>19 ابريل</td>
+                    <td>03:53 ص</td>
+                    <td>05:24 ص</td>
+                    <td>11:54 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:24 م</td>
+                    <td>07:46 م</td>
+                </tr>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>8 رمضان</td>
+                    <td>20 ابريل</td>
+                    <td>03:51 ص</td>
+                    <td>05:23 ص</td>
+                    <td>11:54 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:25 م</td>
+                    <td>07:46 م</td>
+                </tr>
+                <tr>
+                    <td>الاربعاء</td>
+                    <td>9 رمضان</td>
+                    <td>21 ابريل</td>
+                    <td>03:50 ص</td>
+                    <td>05:22 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:26 م</td>
+                    <td>07:47 م</td>
+                </tr>
+                <tr>
+                    <td>الخميس</td>
+                    <td>10 رمضان</td>
+                    <td>22 ابريل</td>
+                    <td>03:49 ص</td>
+                    <td>05:21 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:26 م</td>
+                    <td>07:48 م</td>
+                </tr>
+                <tr>
+                    <td>الجمعة</td>
+                    <td>11 رمضان</td>
+                    <td>23 ابريل</td>
+                    <td>03:47 ص</td>
+                    <td>05:20 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:27 م</td>
+                    <td>07:49 م</td>
+                </tr>
+                <tr>
+                    <td>السبت</td>
+                    <td>12 رمضان</td>
+                    <td>24 ابريل</td>
+                    <td>03:46 ص</td>
+                    <td>05:19 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:27 م</td>
+                    <td>07:50 م</td>
+                </tr>
+                <tr>
+                    <td>الاحد</td>
+                    <td>13 رمضان</td>
+                    <td>25 ابريل</td>
+                    <td>03:45 ص</td>
+                    <td>05:18 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:28 م</td>
+                    <td>07:51 م</td>
+                </tr>
+                <tr>
+                    <td>الاثنين</td>
+                    <td>14 رمضان</td>
+                    <td>26 ابريل</td>
+                    <td>03:44 ص</td>
+                    <td>05:17 ص</td>
+                    <td>11:53 ص</td>
+                    <td>03:29 م</td>
+                    <td>06:29 م</td>
+                    <td>07:52 م</td>
+                </tr>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>15 رمضان</td>
+                    <td>27 ابريل</td>
+                    <td>03:42 ص</td>
+                    <td>05:16 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:29 م</td>
+                    <td>07:52 م</td>
+                </tr>
+                <tr>
+                    <td>الاربعاء</td>
+                    <td>16 رمضان</td>
+                    <td>28 ابريل</td>
+                    <td>03:41 ص</td>
+                    <td>05:15 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:30 م</td>
+                    <td>07:53 م</td>
+                </tr>
+                <tr>
+                    <td>الخميس</td>
+                    <td>17 رمضان</td>
+                    <td>29 ابريل</td>
+                    <td>03:40 ص</td>
+                    <td>05:14 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:31 م</td>
+                    <td>07:54 م</td>
+                </tr>
+                <tr>
+                    <td>الجمعة</td>
+                    <td>18 رمضان</td>
+                    <td>30 ابريل</td>
+                    <td>03:39 ص</td>
+                    <td>05:13 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:31 م</td>
+                    <td>07:55 م</td>
+                </tr>
+                <tr>
+                    <td>السبت</td>
+                    <td>19 رمضان</td>
+                    <td>01 مايو</td>
+                    <td>03:38 ص</td>
+                    <td>05:12 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:32 م</td>
+                    <td>07:56 م</td>
+                </tr>
+                <tr>
+                    <td>الاحد</td>
+                    <td>20 رمضان</td>
+                    <td>02 مايو</td>
+                    <td>03:37 ص</td>
+                    <td>05:11 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:32 م</td>
+                    <td>07:57 م</td>
+                </tr>
+                <tr>
+                    <td>الاثنين</td>
+                    <td>21 رمضان</td>
+                    <td>03 مايو</td>
+                    <td>03:35 ص</td>
+                    <td>05:11 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:33 م</td>
+                    <td>07:58 م</td>
+                </tr>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>22 رمضان</td>
+                    <td>04 مايو</td>
+                    <td>03:34 ص</td>
+                    <td>05:10 ص</td>
+                    <td>11:52 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:34 م</td>
+                    <td>07:59 م</td>
+                </tr>
+                <tr>
+                    <td>الاربعاء</td>
+                    <td>23 رمضان</td>
+                    <td>05 مايو</td>
+                    <td>03:33 ص</td>
+                    <td>05:09 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:34 م</td>
+                    <td>07:59 م</td>
+                </tr>
+                <tr>
+                    <td>الخميس</td>
+                    <td>24 رمضان</td>
+                    <td>06 مايو</td>
+                    <td>03:32 ص</td>
+                    <td>05:08 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:35 م</td>
+                    <td>08:00 م</td>
+                </tr>
+                <tr>
+                    <td>الجمعة</td>
+                    <td>25 رمضان</td>
+                    <td>07 مايو</td>
+                    <td>03:31 ص</td>
+                    <td>05:07 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:36 م</td>
+                    <td>08:01 م</td>
+                </tr>
+                <tr>
+                    <td>السبت</td>
+                    <td>26 رمضان</td>
+                    <td>08 مايو</td>
+                    <td>03:30 ص</td>
+                    <td>05:07 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:36 م</td>
+                    <td>08:02 م</td>
+                </tr>
+                <tr>
+                    <td>الاحد</td>
+                    <td>27 رمضان</td>
+                    <td>09 مايو</td>
+                    <td>03:29 ص</td>
+                    <td>05:06 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:37 م</td>
+                    <td>08:03 م</td>
+                </tr>
+                <tr>
+                    <td>الاثنين</td>
+                    <td>28 رمضان</td>
+                    <td>10 مايو</td>
+                    <td>03:28 ص</td>
+                    <td>05:05 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:38 م</td>
+                    <td>08:04 م</td>
+                </tr>
+                <tr>
+                    <td>الثلاثاء</td>
+                    <td>29 رمضان</td>
+                    <td>11 مايو</td>
+                    <td>03:27 ص</td>
+                    <td>05:04 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:38 م</td>
+                    <td>08:05 م</td>
+                </tr>
+                <tr>
+                    <td>الاربعاء</td>
+                    <td>30 رمضان</td>
+                    <td>12 مايو</td>
+                    <td>03:26 ص</td>
+                    <td>05:04 ص</td>
+                    <td>11:51 ص</td>
+                    <td>03:28 م</td>
+                    <td>06:39 م</td>
+                    <td>08:06 م</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="morning-azkar" id="morning-azkar">
+        <span id="morning-azkar-close" class="close"><i class="fas fa-times"></i></span>
+        <div class="over-lay" id="morning-azkar-overlay"></div>
+        <h3>أذكار الصباح</h3>
+        <ul class="list-unstyled azkar-list text-center" id="morning-azkar-list"></ul>
+    </section>
+
+    <section class="evening-azkar" id="evening-azkar">
+        <span id="evening-azkar-close" class="close"><i class="fas fa-times"></i></span>
+        <div class="over-lay" id="evening-azkar-overlay"></div>
+        <h3>أذكار المساء</h3>
+        <ul class="list-unstyled azkar-list text-center" id="evening-azkar-list"></ul>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
