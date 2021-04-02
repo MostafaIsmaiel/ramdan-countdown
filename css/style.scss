@@ -406,6 +406,7 @@ body {
     .main-container {
         .container-a {
             .container-moon {
+                filter: unset;
                 transform: scale(1);
                 z-index: 2;
             }
@@ -414,6 +415,8 @@ body {
                 z-index: 1;
 
                 .container-shape {
+                    filter: unset;
+
                     &:nth-child(1) {
                         transform: translate(0px, -130px) scale(0.5);
                     }
