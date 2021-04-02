@@ -430,7 +430,15 @@ body {
                     }
                 }
             }
+
+            .container-stars {
+                .container-star {
+                    filter: unset;
+                }
+            }
         }
+
+
 
         .container-text {
             margin: 0 0 15px;
