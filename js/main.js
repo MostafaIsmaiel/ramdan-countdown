@@ -85,7 +85,7 @@ $(document).ready(function () {
                     }
                     // console.log(response[i]);
                     $(`<li class="azkar-info">
-                <p class='azkar-name'>Zekr: ${response[i].zekr}</p>
+                <p class='azkar-name'>${response[i].zekr}</p>
                 <p class='azkar-count'>Count: " ${response[i].count} "</p>
                 </li>`).appendTo(morningAzkarList);
                 }
@@ -105,7 +105,7 @@ $(document).ready(function () {
                         continue;
                     }
                     $(`<li class="azkar-info">
-                <p class='azkar-name'>Zekr: ${response[i].zekr}</p>
+                <p class='azkar-name'>${response[i].zekr}</p>
                 <p class='azkar-count'>Count: " ${response[i].count} "</p>
                 </li>`).appendTo(eveningAzkarList);
                 }
