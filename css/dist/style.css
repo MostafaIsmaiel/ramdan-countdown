@@ -53,36 +53,30 @@ body {
 .main-container .container-a .container-shapes .container-shape:nth-child(1) {
   transform: translate(0px, -125px) scale(0.5);
   position: relative;
-}
-.main-container .container-a .container-shapes .container-shape:nth-child(2) {
-  transform: translate(0px, -55px) scale(0.65);
-  position: relative;
-}
-.main-container .container-a .container-shapes .container-shape:nth-child(3) {
-  transform: translate(-5px, -117px) scale(0.58);
-  position: relative;
-}
-.main-container .container-a .container-shapes .container-shape .container-shapeImg {
-  animation: spin 1s infinite alternate ease-in-out;
-  transform-origin: top;
-}
-.main-container .container-a .container-shapes .container-shape:nth-child(1) {
   animation: lantern-1 2s 1 ease-in-out;
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(1) .container-shapeImg {
   animation-delay: 0.1s;
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(2) {
+  transform: translate(0px, -55px) scale(0.65);
+  position: relative;
   animation: lantern-2 2s 1 ease-in-out;
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(2) .container-shapeImg {
   animation-delay: 0.5s;
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(3) {
+  transform: translate(-5px, -117px) scale(0.58);
+  position: relative;
   animation: lantern-3 2s 1 ease-in-out;
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(3) .container-shapeImg {
   animation-delay: 0.7s;
+}
+.main-container .container-a .container-shapes .container-shape .container-shapeImg {
+  animation: spin 1s infinite alternate ease-in-out;
+  transform-origin: top;
 }
 .main-container .container-a .container-stars {
   display: flex;
@@ -367,6 +361,9 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
 }
 .imsak .over-lay,
 .morning-azkar .over-lay,
@@ -483,10 +480,14 @@ body {
     overflow: visible;
   }
 
+  .main-container .nav-bar {
+    position: relative;
+  }
   .main-container .container-a .container-moon {
     filter: unset;
     transform: scale(1);
     z-index: 2;
+    animation: pause;
   }
   .main-container .container-a .container-shapes {
     z-index: 1;
@@ -496,21 +497,25 @@ body {
   }
   .main-container .container-a .container-shapes .container-shape:nth-child(1) {
     transform: translate(0px, -130px) scale(0.5);
+    animation: pause;
   }
   .main-container .container-a .container-shapes .container-shape:nth-child(2) {
     transform: translate(0px, -58px) scale(0.65);
+    animation: pause;
   }
   .main-container .container-a .container-shapes .container-shape:nth-child(3) {
     transform: translate(-10px, -148px) scale(0.5);
+    animation: pause;
   }
   .main-container .container-a .container-stars .container-star {
     filter: unset;
   }
   .main-container .container-text {
     margin: 0 0 15px;
+    animation: pause;
   }
-  .main-container .nav-bar {
-    position: relative;
+  .main-container .container-remaining {
+    animation: pause;
   }
   .main-container .prayer .prayer-container {
     position: relative;
@@ -539,6 +544,7 @@ body {
   }
   .main-container .signture {
     padding: 0 0 15px 0;
+    animation: pause;
   }
 
   .imsak .imsak-table {
