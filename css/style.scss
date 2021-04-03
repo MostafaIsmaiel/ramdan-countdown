@@ -57,45 +57,39 @@ body {
                 &:nth-child(1) {
                     transform: translate(0px, -125px) scale(0.5);
                     position: relative;
-                }
-
-                &:nth-child(2) {
-                    transform: translate(0px, -55px) scale(0.65);
-                    position: relative;
-                }
-
-                &:nth-child(3) {
-                    transform: translate(-5px, -117px) scale(0.58);
-                    position: relative;
-                }
-
-                .container-shapeImg {
-                    animation: spin 1s infinite alternate ease-in-out;
-                    transform-origin: top;
-                }
-
-                &:nth-child(1) {
                     animation: lantern-1 2s 1 ease-in-out;
 
                     .container-shapeImg {
                         animation-delay: 0.1s;
                     }
+
                 }
 
                 &:nth-child(2) {
+                    transform: translate(0px, -55px) scale(0.65);
+                    position: relative;
                     animation: lantern-2 2s 1 ease-in-out;
 
                     .container-shapeImg {
                         animation-delay: 0.5s;
                     }
+
                 }
 
                 &:nth-child(3) {
+                    transform: translate(-5px, -117px) scale(0.58);
+                    position: relative;
                     animation: lantern-3 2s 1 ease-in-out;
 
                     .container-shapeImg {
                         animation-delay: 0.7s;
                     }
+
+                }
+
+                .container-shapeImg {
+                    animation: spin 1s infinite alternate ease-in-out;
+                    transform-origin: top;
                 }
             }
         }
@@ -449,6 +443,9 @@ body {
     top: 0;
     left: 0;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
 
     .over-lay {
         position: absolute;
@@ -540,11 +537,16 @@ body {
     }
 
     .main-container {
+        .nav-bar {
+            position: relative;
+        }
+
         .container-a {
             .container-moon {
                 filter: unset;
                 transform: scale(1);
                 z-index: 2;
+                animation: pause;
             }
 
             .container-shapes {
@@ -555,14 +557,20 @@ body {
 
                     &:nth-child(1) {
                         transform: translate(0px, -130px) scale(0.5);
+                        animation: pause;
+
                     }
 
                     &:nth-child(2) {
                         transform: translate(0px, -58px) scale(0.65);
+                        animation: pause;
+
                     }
 
                     &:nth-child(3) {
                         transform: translate(-10px, -148px) scale(0.5);
+                        animation: pause;
+
                     }
                 }
             }
@@ -576,10 +584,11 @@ body {
 
         .container-text {
             margin: 0 0 15px;
+            animation: pause;
         }
 
-        .nav-bar {
-            position: relative;
+        .container-remaining {
+            animation: pause;
         }
 
         .prayer {
@@ -618,6 +627,7 @@ body {
 
         .signture {
             padding: 0 0 15px 0;
+            animation: pause;
         }
     }
 
