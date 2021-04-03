@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
+// Variables
+$main-color: wheat;
+$secondry-color:#e3a023;
+$backgroundColor:#000000eb;
+
+@mixin transition {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+@mixin userSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +39,89 @@ body {
 .main-container {
     direction: rtl;
 
+    .nav-bar {
+        position: fixed;
+        z-index: 1;
+        @include userSelect();
+
+        .nav-list {
+            text-align: right;
+            padding: 15px;
+            color: $main-color;
+
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+                cursor: pointer;
+
+                i {
+                    padding-left: 5px;
+                }
+            }
+
+            .nav-li:last-child {
+                position: relative;
+
+                .zekr-list {
+                    position: absolute;
+                    width: 120px;
+                    background-color: #00000073;
+                    padding: 10px;
+                    border-radius: 10px;
+                    transform: translateY(15px);
+                    text-align: center;
+                    visibility: hidden;
+                    opacity: 0;
+                    @include transition();
+
+                    li {
+                        margin: 10px 0;
+                        @include transition();
+
+                        &:hover {
+                            color: $secondry-color;
+
+                        }
+                    }
+                }
+
+                &:hover {
+                    .zekr-list {
+                        visibility: visible;
+                        opacity: 1;
+                        top: unset;
+                        transform: translateY(5px);
+                    }
+                }
+            }
+        }
+    }
+
+    .aya {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        color: $main-color;
+        filter: drop-shadow(2px 4px 6px black);
+        animation: moon 2s 1 ease-in-out;
+
+        h2 {
+            margin: 15px 0;
+        }
+
+        p {
+            margin: 15px 0
+        }
+    }
+
     .container-a {
         display: flex;
         align-items: center;
         justify-content: center;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        @include userSelect();
 
         .container-content {
             position: relative;
@@ -52,7 +146,7 @@ body {
             display: flex;
 
             .container-shape {
-                filter: drop-shadow(4px 3px 5px #b37800);
+                filter: drop-shadow(4px 3px 5px $secondry-color);
 
                 &:nth-child(1) {
                     transform: translate(0px, -125px) scale(0.5);
@@ -102,7 +196,7 @@ body {
                 top: 60%;
                 animation: fade 1s infinite alternate ease-in-out;
                 z-index: -1;
-                filter: drop-shadow(0px 0px 5px #b37800);
+                filter: drop-shadow(0px 0px 5px $secondry-color);
 
                 &:nth-child(1) {
                     animation-delay: 0.3s;
@@ -165,8 +259,8 @@ body {
         }
 
         .container-specialWord {
-            color: #EBC882;
-            text-shadow: 0px 0px 5px #ffca5e;
+            color: $main-color;
+            filter: drop-shadow(0px 0px 5px $secondry-color);
         }
     }
 
@@ -193,85 +287,8 @@ body {
         }
     }
 
-    .nav-bar {
-        position: fixed;
-        z-index: 1;
-
-        .nav-list {
-            text-align: right;
-            padding: 15px;
-            color: wheat;
-
-            .nav-li {
-                display: inline-block;
-                padding: 0 10px;
-                cursor: pointer;
-
-                i {
-                    padding-left: 5px;
-                }
-            }
-
-            .nav-li:last-child {
-                position: relative;
-
-                .zekr-list {
-                    position: absolute;
-                    width: 120px;
-                    background-color: #00000073;
-                    padding: 10px;
-                    border-radius: 10px;
-                    transform: translateY(15px);
-                    text-align: center;
-                    visibility: hidden;
-                    opacity: 0;
-                    transition: all 0.3s ease-in-out;
-
-                    li {
-                        margin: 10px 0;
-                        transition: all 0.1s ease-in-out;
-
-                        &:hover {
-                            color: #e3a023;
-
-                        }
-                    }
-                }
-
-                &:hover {
-                    .zekr-list {
-                        visibility: visible;
-                        opacity: 1;
-                        top: unset;
-                        transform: translateY(5px);
-                    }
-                }
-            }
-        }
-    }
-
-    .aya {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        color: wheat;
-        filter: drop-shadow(2px 4px 6px black);
-        animation: moon 2s 1 ease-in-out;
-
-        h2 {
-            margin: 15px 0;
-        }
-
-        p {
-            margin: 15px 0
-        }
-    }
-
     .prayer {
-        color: wheat;
+        color: $main-color;
         direction: ltr;
 
         .prayer-container {
@@ -289,8 +306,8 @@ body {
                 width: 100%;
                 padding: 5px 10px;
                 background-color: transparent;
-                border: 2px solid wheat;
-                color: wheat;
+                border: 2px solid $main-color;
+                color: $main-color;
 
                 option {
                     color: #55430c;
@@ -303,12 +320,13 @@ body {
 
             .pray-list {
                 font-size: 14px;
-                border: 2px solid wheat;
+                border: 2px solid $main-color;
                 border-radius: 10px;
                 padding: 10px;
                 margin: 0;
                 background-color: #00000066;
-                transition: all 0.3s ease-in-out;
+                @include transition();
+
 
                 .pray-info {
                     position: relative;
@@ -317,7 +335,7 @@ body {
                         content: "";
                         height: 2px;
                         width: 100%;
-                        background-color: wheat;
+                        background-color: $main-color;
                         position: absolute;
                         bottom: -2px;
                         right: 0;
@@ -337,7 +355,6 @@ body {
                 }
             }
         }
-
     }
 
     .signture {
@@ -357,7 +374,7 @@ body {
             text-decoration: none;
             font-weight: 700;
             color: #EBC882;
-            text-shadow: 0px 0px 5px #b37800;
+            filter: drop-shadow(0px 0px 5px $secondry-color);
         }
     }
 
@@ -445,7 +462,8 @@ body {
     z-index: 10;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease-in-out;
+    @include transition();
+
 
     .over-lay {
         position: absolute;
@@ -458,24 +476,27 @@ body {
     }
 
     .close {
+        padding: 5px 8px;
+        border-radius: 5px;
         position: absolute;
         top: 20px;
         right: 20px;
-        color: wheat;
+        color: $main-color;
         cursor: pointer;
         z-index: 1;
         text-shadow: unset;
         opacity: 1;
         float: unset;
+        background-color: $backgroundColor;
 
     }
 
     h3 {
-        color: wheat;
+        color: $main-color;
         padding: 20px;
         font-size: 36px;
         border-radius: 10px;
-        background-color: #000000eb;
+        background-color: $backgroundColor;
 
     }
 
@@ -490,15 +511,15 @@ body {
         display: block;
         height: 50vh;
         width: unset;
-        color: wheat;
+        color: $main-color;
         font-size: 14px;
-        background-color: #000000eb;
+        background-color: $backgroundColor;
         overflow-y: scroll;
         border-radius: 10px;
 
         tbody {
             tr:hover {
-                color: #e3a023;
+                color: $secondry-color;
                 background-color: rgba(0, 0, 0, .075);
             }
         }
@@ -511,7 +532,7 @@ body {
                 content: "";
                 height: 2px;
                 width: 100%;
-                background-color: wheat;
+                background-color: $main-color;
                 position: absolute;
                 bottom: -2px;
                 right: 0;
@@ -524,6 +545,10 @@ body {
             .azkar-name,
             .azkar-count {
                 font-size: 16px;
+            }
+
+            .azkar-count {
+                color: $secondry-color;
             }
         }
 
@@ -637,6 +662,4 @@ body {
             width: 80%;
         }
     }
-
-
 }
