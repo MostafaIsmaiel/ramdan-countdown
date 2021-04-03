@@ -18,6 +18,78 @@ body {
 .main-container {
   direction: rtl;
 }
+.main-container .nav-bar {
+  position: fixed;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-container .nav-bar .nav-list {
+  text-align: right;
+  padding: 15px;
+  color: wheat;
+}
+.main-container .nav-bar .nav-list .nav-li {
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.main-container .nav-bar .nav-list .nav-li i {
+  padding-left: 5px;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child {
+  position: relative;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list {
+  position: absolute;
+  width: 120px;
+  background-color: #00000073;
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(15px);
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li {
+  margin: 10px 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li:hover {
+  color: #e3a023;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child:hover .zekr-list {
+  visibility: visible;
+  opacity: 1;
+  top: unset;
+  transform: translateY(5px);
+}
+.main-container .aya {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: wheat;
+  filter: drop-shadow(2px 4px 6px black);
+  animation: moon 2s 1 ease-in-out;
+}
+.main-container .aya h2 {
+  margin: 15px 0;
+}
+.main-container .aya p {
+  margin: 15px 0;
+}
 .main-container .container-a {
   display: flex;
   align-items: center;
@@ -48,7 +120,7 @@ body {
   display: flex;
 }
 .main-container .container-a .container-shapes .container-shape {
-  filter: drop-shadow(4px 3px 5px #b37800);
+  filter: drop-shadow(4px 3px 5px #e3a023);
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(1) {
   transform: translate(0px, -125px) scale(0.5);
@@ -86,7 +158,7 @@ body {
   top: 60%;
   animation: fade 1s infinite alternate ease-in-out;
   z-index: -1;
-  filter: drop-shadow(0px 0px 5px #b37800);
+  filter: drop-shadow(0px 0px 5px #e3a023);
 }
 .main-container .container-a .container-stars .container-star:nth-child(1) {
   animation-delay: 0.3s;
@@ -134,8 +206,8 @@ body {
   color: white;
 }
 .main-container .container-text .container-specialWord {
-  color: #EBC882;
-  text-shadow: 0px 0px 5px #ffca5e;
+  color: wheat;
+  filter: drop-shadow(0px 0px 5px #e3a023);
 }
 .main-container .container-remaining {
   color: white;
@@ -153,68 +225,6 @@ body {
 }
 .main-container .container--duringRamdan .container-textFrom {
   display: inline-block;
-}
-.main-container .nav-bar {
-  position: fixed;
-  z-index: 1;
-}
-.main-container .nav-bar .nav-list {
-  text-align: right;
-  padding: 15px;
-  color: wheat;
-}
-.main-container .nav-bar .nav-list .nav-li {
-  display: inline-block;
-  padding: 0 10px;
-  cursor: pointer;
-}
-.main-container .nav-bar .nav-list .nav-li i {
-  padding-left: 5px;
-}
-.main-container .nav-bar .nav-list .nav-li:last-child {
-  position: relative;
-}
-.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list {
-  position: absolute;
-  width: 120px;
-  background-color: #00000073;
-  padding: 10px;
-  border-radius: 10px;
-  transform: translateY(15px);
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li {
-  margin: 10px 0;
-  transition: all 0.1s ease-in-out;
-}
-.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li:hover {
-  color: #e3a023;
-}
-.main-container .nav-bar .nav-list .nav-li:last-child:hover .zekr-list {
-  visibility: visible;
-  opacity: 1;
-  top: unset;
-  transform: translateY(5px);
-}
-.main-container .aya {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: wheat;
-  filter: drop-shadow(2px 4px 6px black);
-  animation: moon 2s 1 ease-in-out;
-}
-.main-container .aya h2 {
-  margin: 15px 0;
-}
-.main-container .aya p {
-  margin: 15px 0;
 }
 .main-container .prayer {
   color: wheat;
@@ -250,7 +260,10 @@ body {
   padding: 10px;
   margin: 0;
   background-color: #00000066;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .main-container .prayer .prayer-container .pray-list .pray-info {
   position: relative;
@@ -289,7 +302,7 @@ body {
   text-decoration: none;
   font-weight: 700;
   color: #EBC882;
-  text-shadow: 0px 0px 5px #b37800;
+  filter: drop-shadow(0px 0px 5px #e3a023);
 }
 @keyframes spin {
   from {
@@ -363,7 +376,10 @@ body {
   z-index: 10;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .imsak .over-lay,
 .morning-azkar .over-lay,
@@ -379,6 +395,8 @@ body {
 .imsak .close,
 .morning-azkar .close,
 .evening-azkar .close {
+  padding: 5px 8px;
+  border-radius: 5px;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -388,6 +406,7 @@ body {
   text-shadow: unset;
   opacity: 1;
   float: unset;
+  background-color: #000000eb;
 }
 .imsak h3,
 .morning-azkar h3,
@@ -473,6 +492,14 @@ body {
 .evening-azkar .azkar-list .azkar-info .azkar-name,
 .evening-azkar .azkar-list .azkar-info .azkar-count {
   font-size: 16px;
+}
+.imsak .imsak-table .azkar-info .azkar-count,
+.imsak .azkar-list .azkar-info .azkar-count,
+.morning-azkar .imsak-table .azkar-info .azkar-count,
+.morning-azkar .azkar-list .azkar-info .azkar-count,
+.evening-azkar .imsak-table .azkar-info .azkar-count,
+.evening-azkar .azkar-list .azkar-info .azkar-count {
+  color: #e3a023;
 }
 
 @media (max-width: 768px) {
