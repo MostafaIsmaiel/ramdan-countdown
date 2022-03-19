@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <!-- HTML Meta Tags -->
+    <meta
+      name="description"
+      content="حساب المدة الباقية علي بداية / نهاية رمضان"
+    />
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Ramadan Countdown" />
+    <meta
+      itemprop="description"
+      content="حساب المدة الباقية علي بداية / نهاية رمضان"
+    />
+    <meta
+      itemprop="image"
+      content="https://mostafaismaiel.github.io/ramdan-countdown/images/background.jpg"
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://mostafaismaiel.github.io/ramdan-countdown/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ramadan Countdown" />
+    <meta
+      property="og:description"
+      content="حساب المدة الباقية علي بداية / نهاية رمضان"
+    />
+    <meta
+      property="og:image"
+      content="https://mostafaismaiel.github.io/ramdan-countdown/images/background.jpg"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ramadan Countdown" />
+    <meta
+      name="twitter:description"
+      content="حساب المدة الباقية علي بداية / نهاية رمضان"
+    />
+    <meta
+      name="twitter:image"
+      content="https://mostafaismaiel.github.io/ramdan-countdown/images/background.jpg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/dist/style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/moon.ico" />
+    <title>Ramadan Countdown</title>
+  </head>
+
+  <body>
+    <section class="main-container">
+      <audio id="audio" autoplay>
+        <source src="audio/ahlan ramadan.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-md-6">
+            <nav class="nav-bar">
+              <ul class="list-unstyled nav-list">
+                <li id="imsak-btn" class="nav-li">
+                  <i class="fas fa-mosque"></i>
+                  إامساكية رمضان
+                </li>
+
+                <li id="azkar-btn " class="nav-li">
+                  <i class="fas fa-book-open"></i>
+                  أذكار
+                  <ul class="list-unstyled zekr-list">
+                    <li id="morning-azkar-btn">أذكار الصباح</li>
+                    <li id="evening-azkar-btn">أذكار المساء</li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <div class="aya">
+              <h2 class="h1">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
+              <p class="lead">
+                شَهْرُ رَمَضَانَ الَّذِي أُنْزِلَ فِيهِ الْقُرْآنُ هُدىً
+                لِلنَّاسِ وَبَيِّنَاتٍ مِنَ الْهُدَى وَالْفُرْقَانِ
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <section class="container-a">
+              <div class="container-content">
+                <img src="images/moon.svg" alt="moon" class="container-moon" />
+                <div class="container-shapes">
+                  <div class="container-shape">
+                    <img
+                      src="images/lantern.svg"
+                      alt="lantern"
+                      class="container-shapeImg"
+                    />
+                  </div>
+                  <div class="container-shape">
+                    <img
+                      src="images/lantern.svg"
+                      alt="lantern"
+                      class="container-shapeImg"
+                    />
+                  </div>
+                  <div class="container-shape">
+                    <img
+                      src="images/lantern.svg"
+                      alt="lantern"
+                      class="container-shapeImg"
+                    />
+                  </div>
+                </div>
+                <div class="container-stars">
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                  <div class="container-star">
+                    <img
+                      src="images/star.svg"
+                      alt="star"
+                      class="container-starImg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <section class="prayer">
+          <div class="prayer-container text-center">
+            <p class="lead">Choose Your City</p>
+            <select class="city-list" id="city-list">
+              <option value="" selected disabled>City...</option>
+              <option value="cairo">Cairo</option>
+              <option value="alexandria">Alex</option>
+              <option value="giza">Giza</option>
+              <option value="ismailia">Ismailia</option>
+              <option value="aswan">Aswan</option>
+              <option value="damanhour">Damanhour</option>
+              <option value="suez">Suez</option>
+              <option value="banha">Banha</option>
+              <option value="sohag">Sohag</option>
+            </select>
+            <ul id="pray-list" class="list-unstyled text-center pray-list">
+              <li>-</li>
+            </ul>
+          </div>
+        </section>
+        <p class="container-text text-center">
+          <span>باقي</span>
+          <span class="container-textTo">علي</span>
+          <span class="container-textFrom">من</span>
+          <span class="container-specialWord">رمضان</span>
+        </p>
+        <p class="container-remaining text-center">
+          <span class="container-remainingTime"></span>
+          <span>يوم</span>
+        </p>
+      </div>
+      <div class="signture">
+        <p>
+          Made with <i class="fas fa-heart"></i> by
+          <a href="https://github.com/MostafaIsmaiel" target="_blank"
+            >Mostafa Ismaiel</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <section class="imsak text-center" id="imsak">
+      <span id="imsak-close" class="close"><i class="fas fa-times"></i></span>
+      <div class="over-lay" id="over-lay"></div>
+      <table class="table table-striped imsak-table text-center">
+        <thead>
+          <tr>
+            <th>اليوم</th>
+            <th>رمضان</th>
+            <th>ميلادى</th>
+            <th>الفجر</th>
+            <th>الشروق</th>
+            <th>الظهر</th>
+            <th>العصر</th>
+            <th>المغرب</th>
+            <th>العشاء</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="center">السبت</td>
+            <td align="center">1 رمضان</td>
+            <td align="center">02 ابريل</td>
+            <td align="center">04:15 ص</td>
+            <td align="center">05:44 ص</td>
+            <td align="center">11:59 ص</td>
+            <td align="center">03:31 م</td>
+            <td align="center">06:14 م</td>
+            <td align="center">07:33 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاحد</td>
+            <td align="center">2 رمضان</td>
+            <td align="center">03 ابريل</td>
+            <td align="center">04:14 ص</td>
+            <td align="center">05:42 ص</td>
+            <td align="center">11:58 ص</td>
+            <td align="center">03:31 م</td>
+            <td align="center">06:15 م</td>
+            <td align="center">07:34 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاثنين</td>
+            <td align="center">3 رمضان</td>
+            <td align="center">04 ابريل</td>
+            <td align="center">04:13 ص</td>
+            <td align="center">05:41 ص</td>
+            <td align="center">11:58 ص</td>
+            <td align="center">03:31 م</td>
+            <td align="center">06:16 م</td>
+            <td align="center">07:35 م</td>
+          </tr>
+          <tr>
+            <td align="center">الثلاثاء</td>
+            <td align="center">4 رمضان</td>
+            <td align="center">05 ابريل</td>
+            <td align="center">04:11 ص</td>
+            <td align="center">05:40 ص</td>
+            <td align="center">11:58 ص</td>
+            <td align="center">03:31 م</td>
+            <td align="center">06:16 م</td>
+            <td align="center">07:35 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاربعاء</td>
+            <td align="center">5 رمضان</td>
+            <td align="center">06 ابريل</td>
+            <td align="center">04:10 ص</td>
+            <td align="center">05:39 ص</td>
+            <td align="center">11:58 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:17 م</td>
+            <td align="center">07:36 م</td>
+          </tr>
+          <tr>
+            <td align="center">الخميس</td>
+            <td align="center">6 رمضان</td>
+            <td align="center">07 ابريل</td>
+            <td align="center">04:09 ص</td>
+            <td align="center">05:38 ص</td>
+            <td align="center">11:57 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:17 م</td>
+            <td align="center">07:37 م</td>
+          </tr>
+          <tr>
+            <td align="center">الجمعة</td>
+            <td align="center">7 رمضان</td>
+            <td align="center">08 ابريل</td>
+            <td align="center">04:07 ص</td>
+            <td align="center">05:36 ص</td>
+            <td align="center">11:57 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:18 م</td>
+            <td align="center">07:38 م</td>
+          </tr>
+          <tr>
+            <td align="center">السبت</td>
+            <td align="center">8 رمضان</td>
+            <td align="center">09 ابريل</td>
+            <td align="center">04:06 ص</td>
+            <td align="center">05:35 ص</td>
+            <td align="center">11:57 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:19 م</td>
+            <td align="center">07:38 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاحد</td>
+            <td align="center">9 رمضان</td>
+            <td align="center">10 ابريل</td>
+            <td align="center">04:05 ص</td>
+            <td align="center">05:34 ص</td>
+            <td align="center">11:56 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:19 م</td>
+            <td align="center">07:39 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاثنين</td>
+            <td align="center">10 رمضان</td>
+            <td align="center">11 ابريل</td>
+            <td align="center">04:03 ص</td>
+            <td align="center">05:33 ص</td>
+            <td align="center">11:56 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:20 م</td>
+            <td align="center">07:40 م</td>
+          </tr>
+          <tr>
+            <td align="center">الثلاثاء</td>
+            <td align="center">11 رمضان</td>
+            <td align="center">12 ابريل</td>
+            <td align="center">04:02 ص</td>
+            <td align="center">05:32 ص</td>
+            <td align="center">11:56 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:20 م</td>
+            <td align="center">07:41 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاربعاء</td>
+            <td align="center">12 رمضان</td>
+            <td align="center">13 ابريل</td>
+            <td align="center">04:01 ص</td>
+            <td align="center">05:31 ص</td>
+            <td align="center">11:56 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:21 م</td>
+            <td align="center">07:41 م</td>
+          </tr>
+          <tr>
+            <td align="center">الخميس</td>
+            <td align="center">13 رمضان</td>
+            <td align="center">14 ابريل</td>
+            <td align="center">03:59 ص</td>
+            <td align="center">05:30 ص</td>
+            <td align="center">11:55 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:22 م</td>
+            <td align="center">07:42 م</td>
+          </tr>
+          <tr>
+            <td align="center">الجمعة</td>
+            <td align="center">14 رمضان</td>
+            <td align="center">15 ابريل</td>
+            <td align="center">03:58 ص</td>
+            <td align="center">05:29 ص</td>
+            <td align="center">11:55 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:22 م</td>
+            <td align="center">07:43 م</td>
+          </tr>
+          <tr>
+            <td align="center">السبت</td>
+            <td align="center">15 رمضان</td>
+            <td align="center">16 ابريل</td>
+            <td align="center">03:57 ص</td>
+            <td align="center">05:27 ص</td>
+            <td align="center">11:55 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:23 م</td>
+            <td align="center">07:44 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاحد</td>
+            <td align="center">16 رمضان</td>
+            <td align="center">17 ابريل</td>
+            <td align="center">03:55 ص</td>
+            <td align="center">05:26 ص</td>
+            <td align="center">11:55 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:24 م</td>
+            <td align="center">07:45 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاثنين</td>
+            <td align="center">17 رمضان</td>
+            <td align="center">18 ابريل</td>
+            <td align="center">03:54 ص</td>
+            <td align="center">05:25 ص</td>
+            <td align="center">11:55 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:24 م</td>
+            <td align="center">07:46 م</td>
+          </tr>
+          <tr>
+            <td align="center">الثلاثاء</td>
+            <td align="center">18 رمضان</td>
+            <td align="center">19 ابريل</td>
+            <td align="center">03:53 ص</td>
+            <td align="center">05:24 ص</td>
+            <td align="center">11:54 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:25 م</td>
+            <td align="center">07:46 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاربعاء</td>
+            <td align="center">19 رمضان</td>
+            <td align="center">20 ابريل</td>
+            <td align="center">03:51 ص</td>
+            <td align="center">05:23 ص</td>
+            <td align="center">11:54 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:25 م</td>
+            <td align="center">07:47 م</td>
+          </tr>
+          <tr>
+            <td align="center">الخميس</td>
+            <td align="center">20 رمضان</td>
+            <td align="center">21 ابريل</td>
+            <td align="center">03:50 ص</td>
+            <td align="center">05:22 ص</td>
+            <td align="center">11:54 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:26 م</td>
+            <td align="center">07:48 م</td>
+          </tr>
+          <tr>
+            <td align="center">الجمعة</td>
+            <td align="center">21 رمضان</td>
+            <td align="center">22 ابريل</td>
+            <td align="center">03:49 ص</td>
+            <td align="center">05:21 ص</td>
+            <td align="center">11:54 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:27 م</td>
+            <td align="center">07:49 م</td>
+          </tr>
+          <tr>
+            <td align="center">السبت</td>
+            <td align="center">22 رمضان</td>
+            <td align="center">23 ابريل</td>
+            <td align="center">03:47 ص</td>
+            <td align="center">05:20 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:30 م</td>
+            <td align="center">06:27 م</td>
+            <td align="center">07:50 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاحد</td>
+            <td align="center">23 رمضان</td>
+            <td align="center">24 ابريل</td>
+            <td align="center">03:46 ص</td>
+            <td align="center">05:19 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:28 م</td>
+            <td align="center">07:51 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاثنين</td>
+            <td align="center">24 رمضان</td>
+            <td align="center">25 ابريل</td>
+            <td align="center">03:45 ص</td>
+            <td align="center">05:18 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:29 م</td>
+            <td align="center">07:51 م</td>
+          </tr>
+          <tr>
+            <td align="center">الثلاثاء</td>
+            <td align="center">25 رمضان</td>
+            <td align="center">26 ابريل</td>
+            <td align="center">03:44 ص</td>
+            <td align="center">05:17 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:29 م</td>
+            <td align="center">07:52 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاربعاء</td>
+            <td align="center">26 رمضان</td>
+            <td align="center">27 ابريل</td>
+            <td align="center">03:42 ص</td>
+            <td align="center">05:16 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:30 م</td>
+            <td align="center">07:53 م</td>
+          </tr>
+          <tr>
+            <td align="center">الخميس</td>
+            <td align="center">27 رمضان</td>
+            <td align="center">28 ابريل</td>
+            <td align="center">03:41 ص</td>
+            <td align="center">05:15 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:30 م</td>
+            <td align="center">07:54 م</td>
+          </tr>
+          <tr>
+            <td align="center">الجمعة</td>
+            <td align="center">28 رمضان</td>
+            <td align="center">29 ابريل</td>
+            <td align="center">03:40 ص</td>
+            <td align="center">05:14 ص</td>
+            <td align="center">11:53 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:31 م</td>
+            <td align="center">07:55 م</td>
+          </tr>
+          <tr>
+            <td align="center">السبت</td>
+            <td align="center">29 رمضان</td>
+            <td align="center">30 ابريل</td>
+            <td align="center">03:39 ص</td>
+            <td align="center">05:13 ص</td>
+            <td align="center">11:52 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:32 م</td>
+            <td align="center">07:56 م</td>
+          </tr>
+          <tr>
+            <td align="center">الاحد</td>
+            <td align="center">30 رمضان</td>
+            <td align="center">01 مايو</td>
+            <td align="center">03:38 ص</td>
+            <td align="center">05:12 ص</td>
+            <td align="center">11:52 ص</td>
+            <td align="center">03:29 م</td>
+            <td align="center">06:32 م</td>
+            <td align="center">07:57 م</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="morning-azkar" id="morning-azkar">
+      <span id="morning-azkar-close" class="close"
+        ><i class="fas fa-times"></i
+      ></span>
+      <div class="over-lay" id="morning-azkar-overlay"></div>
+      <h3>أذكار الصباح</h3>
+      <ul
+        class="list-unstyled azkar-list text-center"
+        id="morning-azkar-list"
+      ></ul>
+    </section>
+
+    <section class="evening-azkar" id="evening-azkar">
+      <span id="evening-azkar-close" class="close"
+        ><i class="fas fa-times"></i
+      ></span>
+      <div class="over-lay" id="evening-azkar-overlay"></div>
+      <h3>أذكار المساء</h3>
+      <ul
+        class="list-unstyled azkar-list text-center"
+        id="evening-azkar-list"
+      ></ul>
+    </section>
+
+    <script src="js/jQuery.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/moment.js"></script>
+    <script src="js/moment-hijri.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

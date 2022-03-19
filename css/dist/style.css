@@ -1,0 +1,581 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Almarai", sans-serif;
+  font-weight: 400;
+  opacity: 0.95;
+  background: url("../../images/background.svg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-container {
+  direction: rtl;
+}
+.main-container .nav-bar {
+  position: fixed;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-container .nav-bar .nav-list {
+  text-align: right;
+  padding: 15px;
+  color: wheat;
+}
+.main-container .nav-bar .nav-list .nav-li {
+  display: inline-block;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.main-container .nav-bar .nav-list .nav-li i {
+  padding-left: 5px;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child {
+  position: relative;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list {
+  position: absolute;
+  width: 120px;
+  background-color: #00000073;
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(15px);
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li {
+  margin: 10px 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child .zekr-list li:hover {
+  color: #e3a023;
+}
+.main-container .nav-bar .nav-list .nav-li:last-child:hover .zekr-list {
+  visibility: visible;
+  opacity: 1;
+  top: unset;
+  transform: translateY(5px);
+}
+.main-container .aya {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: wheat;
+  filter: drop-shadow(2px 4px 6px black);
+  animation: moon 2s 1 ease-in-out;
+}
+.main-container .aya h2 {
+  margin: 15px 0;
+}
+.main-container .aya p {
+  margin: 15px 0;
+}
+.main-container .container-a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-container .container-a .container-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 60px;
+  z-index: 1;
+}
+.main-container .container-a .container-moon {
+  z-index: 1;
+  opacity: 1;
+  position: relative;
+  animation: moon 2s 1 ease-in-out;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.main-container .container-a .container-shapes {
+  display: flex;
+}
+.main-container .container-a .container-shapes .container-shape {
+  filter: drop-shadow(4px 3px 5px #e3a023);
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(1) {
+  transform: translate(0px, -125px) scale(0.5);
+  position: relative;
+  animation: lantern-1 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(1) .container-shapeImg {
+  animation-delay: 0.1s;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(2) {
+  transform: translate(0px, -55px) scale(0.65);
+  position: relative;
+  animation: lantern-2 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(2) .container-shapeImg {
+  animation-delay: 0.5s;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(3) {
+  transform: translate(-5px, -117px) scale(0.58);
+  position: relative;
+  animation: lantern-3 2s 1 ease-in-out;
+}
+.main-container .container-a .container-shapes .container-shape:nth-child(3) .container-shapeImg {
+  animation-delay: 0.7s;
+}
+.main-container .container-a .container-shapes .container-shape .container-shapeImg {
+  animation: spin 1s infinite alternate ease-in-out;
+  transform-origin: top;
+}
+.main-container .container-a .container-stars {
+  display: flex;
+}
+.main-container .container-a .container-stars .container-star {
+  position: absolute;
+  top: 60%;
+  animation: fade 1s infinite alternate ease-in-out;
+  z-index: -1;
+  filter: drop-shadow(0px 0px 5px #e3a023);
+}
+.main-container .container-a .container-stars .container-star:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(1) .container-starImg {
+  transform: translate(70px, -72px) scale(0.6);
+}
+.main-container .container-a .container-stars .container-star:nth-child(2) {
+  animation-delay: -0.45s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(2) .container-starImg {
+  transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(3) .container-starImg {
+  transform: translate(172px, -103px) scale(0.7) rotate(-40deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(4) .container-starImg {
+  transform: translate(-150px, -50px) scale(0.6) rotate(30deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(5) {
+  animation-delay: 0.7s;
+}
+.main-container .container-a .container-stars .container-star:nth-child(5) .container-starImg {
+  transform: translate(-10px, -30px) scale(0.9) rotate(107deg);
+}
+.main-container .container-a .container-stars .container-star:nth-child(6) .container-starImg {
+  transform: translate(60px, -2px) scale(0.85) rotate(156deg);
+}
+.main-container .container-text {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin: 45px 0 15px;
+  position: relative;
+  animation: lantern-3 2s 1 ease-in-out;
+}
+.main-container .container-text .container-textFrom {
+  display: none;
+  color: white;
+}
+.main-container .container-text .container-specialWord {
+  color: wheat;
+  filter: drop-shadow(0px 0px 5px #e3a023);
+}
+.main-container .container-remaining {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  position: relative;
+  animation: lantern-1 2s 1 ease-in-out;
+}
+.main-container .container-remaining .container-remainingTime {
+  font-size: 45px;
+  font-weight: 300;
+}
+.main-container .container--duringRamdan .container-textTo {
+  display: none;
+}
+.main-container .container--duringRamdan .container-textFrom {
+  display: inline-block;
+}
+.main-container .prayer {
+  color: wheat;
+  direction: ltr;
+}
+.main-container .prayer .prayer-container {
+  font-family: "Fjalla One", sans-serif;
+  position: absolute;
+  right: 20px;
+  top: 20%;
+  text-align: right;
+}
+.main-container .prayer .prayer-container .city-list {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 2px solid wheat;
+  color: wheat;
+}
+.main-container .prayer .prayer-container .city-list option {
+  color: #55430c;
+}
+.main-container .prayer .prayer-container .city-list option:disabled {
+  color: #908565;
+}
+.main-container .prayer .prayer-container .pray-list {
+  font-size: 14px;
+  border: 2px solid wheat;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  background-color: #00000066;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-container .prayer .prayer-container .pray-list .pray-info {
+  position: relative;
+}
+.main-container .prayer .prayer-container .pray-list .pray-info::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: wheat;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+.main-container .prayer .prayer-container .pray-list .pray-info:last-child::after {
+  display: none;
+}
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-name {
+  margin: 10px 0;
+}
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
+  margin-bottom: 10px;
+}
+.main-container .signture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: lantern-2 2s 1 ease-in-out;
+  color: white;
+  font-size: 16px;
+}
+.main-container .signture i {
+  color: #b60101;
+}
+.main-container .signture a {
+  text-decoration: none;
+  font-weight: 700;
+  color: wheat;
+  filter: drop-shadow(0px 0px 5px #e3a023);
+}
+@keyframes spin {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moon {
+  from {
+    top: -80px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes lantern-1 {
+  from {
+    right: -80px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes lantern-2 {
+  from {
+    bottom: -80px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes lantern-3 {
+  from {
+    left: -80px;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.imsak,
+.morning-azkar,
+.evening-azkar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.imsak .over-lay,
+.morning-azkar .over-lay,
+.evening-azkar .over-lay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #00000066;
+}
+.imsak .close,
+.morning-azkar .close,
+.evening-azkar .close {
+  padding: 5px 8px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: wheat;
+  cursor: pointer;
+  z-index: 1;
+  text-shadow: unset;
+  opacity: 1;
+  float: unset;
+  background-color: #000000eb;
+}
+.imsak h3,
+.morning-azkar h3,
+.evening-azkar h3 {
+  color: wheat;
+  padding: 20px;
+  font-size: 36px;
+  border-radius: 10px;
+  background-color: #000000eb;
+}
+.imsak .azkar-list,
+.morning-azkar .azkar-list,
+.evening-azkar .azkar-list {
+  width: 80% !important;
+}
+.imsak .imsak-table,
+.imsak .azkar-list,
+.morning-azkar .imsak-table,
+.morning-azkar .azkar-list,
+.evening-azkar .imsak-table,
+.evening-azkar .azkar-list {
+  direction: rtl;
+  padding: 20px;
+  display: block;
+  height: 50vh;
+  width: unset;
+  color: wheat;
+  font-size: 14px;
+  background-color: #000000eb;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.imsak .imsak-table tbody tr:hover,
+.imsak .azkar-list tbody tr:hover,
+.morning-azkar .imsak-table tbody tr:hover,
+.morning-azkar .azkar-list tbody tr:hover,
+.evening-azkar .imsak-table tbody tr:hover,
+.evening-azkar .azkar-list tbody tr:hover {
+  color: #e3a023;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+.imsak .imsak-table .azkar-info,
+.imsak .azkar-list .azkar-info,
+.morning-azkar .imsak-table .azkar-info,
+.morning-azkar .azkar-list .azkar-info,
+.evening-azkar .imsak-table .azkar-info,
+.evening-azkar .azkar-list .azkar-info {
+  position: relative;
+  direction: ltr;
+}
+.imsak .imsak-table .azkar-info::after,
+.imsak .azkar-list .azkar-info::after,
+.morning-azkar .imsak-table .azkar-info::after,
+.morning-azkar .azkar-list .azkar-info::after,
+.evening-azkar .imsak-table .azkar-info::after,
+.evening-azkar .azkar-list .azkar-info::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: wheat;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+.imsak .imsak-table .azkar-info:last-child::after,
+.imsak .azkar-list .azkar-info:last-child::after,
+.morning-azkar .imsak-table .azkar-info:last-child::after,
+.morning-azkar .azkar-list .azkar-info:last-child::after,
+.evening-azkar .imsak-table .azkar-info:last-child::after,
+.evening-azkar .azkar-list .azkar-info:last-child::after {
+  display: none;
+}
+.imsak .imsak-table .azkar-info .azkar-name,
+.imsak .imsak-table .azkar-info .azkar-count,
+.imsak .azkar-list .azkar-info .azkar-name,
+.imsak .azkar-list .azkar-info .azkar-count,
+.morning-azkar .imsak-table .azkar-info .azkar-name,
+.morning-azkar .imsak-table .azkar-info .azkar-count,
+.morning-azkar .azkar-list .azkar-info .azkar-name,
+.morning-azkar .azkar-list .azkar-info .azkar-count,
+.evening-azkar .imsak-table .azkar-info .azkar-name,
+.evening-azkar .imsak-table .azkar-info .azkar-count,
+.evening-azkar .azkar-list .azkar-info .azkar-name,
+.evening-azkar .azkar-list .azkar-info .azkar-count {
+  font-size: 16px;
+}
+.imsak .imsak-table .azkar-info .azkar-count,
+.imsak .azkar-list .azkar-info .azkar-count,
+.morning-azkar .imsak-table .azkar-info .azkar-count,
+.morning-azkar .azkar-list .azkar-info .azkar-count,
+.evening-azkar .imsak-table .azkar-info .azkar-count,
+.evening-azkar .azkar-list .azkar-info .azkar-count {
+  color: #e3a023;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: visible;
+  }
+
+  .main-container .nav-bar {
+    position: relative;
+  }
+  .main-container .container-a .container-moon {
+    filter: unset;
+    transform: scale(1);
+    z-index: 2;
+    animation: pause;
+  }
+  .main-container .container-a .container-shapes {
+    z-index: 1;
+  }
+  .main-container .container-a .container-shapes .container-shape {
+    filter: unset;
+  }
+  .main-container .container-a .container-shapes .container-shape:nth-child(1) {
+    transform: translate(0px, -130px) scale(0.5);
+    animation: pause;
+  }
+  .main-container .container-a .container-shapes .container-shape:nth-child(2) {
+    transform: translate(0px, -58px) scale(0.65);
+    animation: pause;
+  }
+  .main-container .container-a .container-shapes .container-shape:nth-child(3) {
+    transform: translate(-10px, -148px) scale(0.5);
+    animation: pause;
+  }
+  .main-container .container-a .container-stars .container-star {
+    filter: unset;
+  }
+  .main-container .container-text {
+    margin: 0 0 15px;
+    animation: pause;
+  }
+  .main-container .container-remaining {
+    animation: pause;
+  }
+  .main-container .prayer .prayer-container {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    top: unset;
+    font-size: 10px;
+  }
+  .main-container .prayer .prayer-container .city-list {
+    width: unset;
+  }
+  .main-container .prayer .prayer-container .pray-list {
+    padding: 0px;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info::after {
+    display: none;
+  }
+  .main-container .prayer .prayer-container .pray-list .pray-info .pray-name,
+.main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
+    margin: 5px 0;
+  }
+  .main-container .signture {
+    padding: 0 0 15px 0;
+    animation: pause;
+  }
+
+  .imsak .imsak-table {
+    font-size: 12px;
+    width: 80%;
+  }
+}
