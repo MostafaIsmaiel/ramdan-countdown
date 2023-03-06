@@ -1,665 +1,685 @@
 @import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
 // Variables
 $main-color: wheat;
-$secondry-color:#e3a023;
-$backgroundColor:#000000eb;
+$secondry-color: #e3a023;
+$backgroundColor: #000000eb;
 
 @mixin transition {
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 @mixin userSelect {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 body {
-    font-family: "Almarai", sans-serif;
-    font-weight: 400;
-    opacity: 0.95;
-    background: url("../../images/background.svg") no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+  font-family: "Almarai", sans-serif;
+  font-weight: 400;
+  opacity: 0.95;
+  background: url("../../images/background.svg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .main-container {
-    direction: rtl;
+  direction: rtl;
 
-    .nav-bar {
-        position: fixed;
-        z-index: 1;
-        @include userSelect();
+  .nav-bar {
+    position: fixed;
+    z-index: 1;
+    @include userSelect();
 
-        .nav-list {
-            text-align: right;
-            padding: 15px;
-            color: $main-color;
+    .nav-list {
+      text-align: right;
+      padding: 15px;
+      color: $main-color;
 
-            .nav-li {
-                display: inline-block;
-                padding: 0 10px;
-                cursor: pointer;
-
-                i {
-                    padding-left: 5px;
-                }
-            }
-
-            .nav-li:last-child {
-                position: relative;
-
-                .zekr-list {
-                    position: absolute;
-                    width: 120px;
-                    background-color: #00000073;
-                    padding: 10px;
-                    border-radius: 10px;
-                    transform: translateY(15px);
-                    text-align: center;
-                    visibility: hidden;
-                    opacity: 0;
-                    @include transition();
-
-                    li {
-                        margin: 10px 0;
-                        @include transition();
-
-                        &:hover {
-                            color: $secondry-color;
-
-                        }
-                    }
-                }
-
-                &:hover {
-                    .zekr-list {
-                        visibility: visible;
-                        opacity: 1;
-                        top: unset;
-                        transform: translateY(5px);
-                    }
-                }
-            }
-        }
-    }
-
-    .aya {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        color: $main-color;
-        filter: drop-shadow(2px 4px 6px black);
-        animation: moon 2s 1 ease-in-out;
-
-        h2 {
-            margin: 15px 0;
-        }
-
-        p {
-            margin: 15px 0
-        }
-    }
-
-    .container-a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include userSelect();
-
-        .container-content {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            margin-top: 60px;
-            z-index: 1;
-        }
-
-        .container-moon {
-            z-index: 1;
-            opacity: 1;
-            position: relative;
-            animation: moon 2s 1 ease-in-out;
-            filter: drop-shadow(2px 4px 6px black);
-        }
-
-        .container-shapes {
-            display: flex;
-
-            .container-shape {
-                filter: drop-shadow(4px 3px 5px $secondry-color);
-
-                &:nth-child(1) {
-                    transform: translate(0px, -125px) scale(0.5);
-                    position: relative;
-                    animation: lantern-1 2s 1 ease-in-out;
-
-                    .container-shapeImg {
-                        animation-delay: 0.1s;
-                    }
-
-                }
-
-                &:nth-child(2) {
-                    transform: translate(0px, -55px) scale(0.65);
-                    position: relative;
-                    animation: lantern-2 2s 1 ease-in-out;
-
-                    .container-shapeImg {
-                        animation-delay: 0.5s;
-                    }
-
-                }
-
-                &:nth-child(3) {
-                    transform: translate(-5px, -117px) scale(0.58);
-                    position: relative;
-                    animation: lantern-3 2s 1 ease-in-out;
-
-                    .container-shapeImg {
-                        animation-delay: 0.7s;
-                    }
-
-                }
-
-                .container-shapeImg {
-                    animation: spin 1s infinite alternate ease-in-out;
-                    transform-origin: top;
-                }
-            }
-        }
-
-        .container-stars {
-            display: flex;
-
-            .container-star {
-                position: absolute;
-                top: 60%;
-                animation: fade 1s infinite alternate ease-in-out;
-                z-index: -1;
-                filter: drop-shadow(0px 0px 5px $secondry-color);
-
-                &:nth-child(1) {
-                    animation-delay: 0.3s;
-
-                    .container-starImg {
-                        transform: translate(70px, -72px) scale(0.6);
-                    }
-                }
-
-                &:nth-child(2) {
-                    animation-delay: -0.45s;
-
-                    .container-starImg {
-                        transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
-                    }
-                }
-
-                &:nth-child(3) {
-                    animation-delay: 0.1s;
-
-                    .container-starImg {
-                        transform: translate(172px, -103px) scale(0.7) rotate(-40deg);
-                    }
-                }
-
-                &:nth-child(4) {
-                    animation-delay: 0.4s;
-
-                    .container-starImg {
-                        transform: translate(-150px, -50px) scale(0.6) rotate(30deg);
-                    }
-                }
-
-                &:nth-child(5) {
-                    animation-delay: 0.7s;
-
-                    .container-starImg {
-                        transform: translate(-10px, -30px) scale(0.9) rotate(107deg);
-                    }
-                }
-
-                &:nth-child(6) .container-starImg {
-                    transform: translate(60px, -2px) scale(0.85) rotate(156deg);
-                }
-            }
-        }
-    }
-
-    .container-text {
-        font-size: 32px;
-        font-weight: 700;
-        color: white;
-        margin: 45px 0 15px;
-        position: relative;
-        animation: lantern-3 2s 1 ease-in-out;
-
-        .container-textFrom {
-            display: none;
-            color: white;
-        }
-
-        .container-specialWord {
-            color: $main-color;
-            filter: drop-shadow(0px 0px 5px $secondry-color);
-        }
-    }
-
-    .container-remaining {
-        color: white;
-        font-size: 20px;
-        font-weight: 700;
-        position: relative;
-        animation: lantern-1 2s 1 ease-in-out;
-
-        .container-remainingTime {
-            font-size: 45px;
-            font-weight: 300;
-        }
-    }
-
-    .container--duringRamdan {
-        .container-textTo {
-            display: none;
-        }
-
-        .container-textFrom {
-            display: inline-block;
-        }
-    }
-
-    .prayer {
-        color: $main-color;
-        direction: ltr;
-
-        .prayer-container {
-            font-family: 'Fjalla One',
-                sans-serif;
-            position: absolute;
-            right: 20px;
-            top: 20%;
-            text-align: right;
-
-            .city-list {
-                margin-bottom: 10px;
-                border-radius: 5px;
-                outline: none;
-                width: 100%;
-                padding: 5px 10px;
-                background-color: transparent;
-                border: 2px solid $main-color;
-                color: $main-color;
-
-                option {
-                    color: #55430c;
-
-                    &:disabled {
-                        color: #908565;
-                    }
-                }
-            }
-
-            .pray-list {
-                font-size: 14px;
-                border: 2px solid $main-color;
-                border-radius: 10px;
-                padding: 10px;
-                margin: 0;
-                background-color: #00000066;
-                @include transition();
-
-
-                .pray-info {
-                    position: relative;
-
-                    &::after {
-                        content: "";
-                        height: 2px;
-                        width: 100%;
-                        background-color: $main-color;
-                        position: absolute;
-                        bottom: -2px;
-                        right: 0;
-                    }
-
-                    &:last-child::after {
-                        display: none;
-                    }
-
-                    .pray-name {
-                        margin: 10px 0;
-                    }
-
-                    .pray-time {
-                        margin-bottom: 10px;
-                    }
-                }
-            }
-        }
-    }
-
-    .signture {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        animation: lantern-2 2s 1 ease-in-out;
-        color: white;
-        font-size: 16px;
+      .nav-li {
+        display: inline-block;
+        padding: 0 10px;
+        cursor: pointer;
 
         i {
-            color: #b60101;
+          padding-left: 5px;
+        }
+      }
+
+      .nav-li:last-child {
+        position: relative;
+
+        .zekr-list {
+          position: absolute;
+          width: 120px;
+          background-color: #00000073;
+          padding: 10px;
+          border-radius: 10px;
+          transform: translateY(15px);
+          text-align: center;
+          visibility: hidden;
+          opacity: 0;
+          @include transition();
+
+          li {
+            margin: 10px 0;
+            @include transition();
+
+            &:hover {
+              color: $secondry-color;
+            }
+          }
         }
 
-        a {
-            text-decoration: none;
-            font-weight: 700;
-            color: $main-color;
-            filter: drop-shadow(0px 0px 5px $secondry-color);
-        }
-    }
-
-    @keyframes spin {
-        from {
-            transform: rotate(-3deg);
-        }
-
-        to {
-            transform: rotate(3deg);
-        }
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0.4;
-        }
-
-        to {
+        &:hover {
+          .zekr-list {
+            visibility: visible;
             opacity: 1;
+            top: unset;
+            transform: translateY(5px);
+          }
         }
+      }
+    }
+  }
+
+  .aya {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: $main-color;
+    filter: drop-shadow(2px 4px 6px black);
+    animation: moon 2s 1 ease-in-out;
+
+    h2 {
+      margin: 15px 0;
     }
 
-    @keyframes moon {
-        from {
-            top: -80px;
-            opacity: 0;
-        }
+    p {
+      margin: 15px 0;
+    }
+  }
 
-        to {
-            top: 0px;
-            opacity: 1;
-        }
+  .container-a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include userSelect();
+
+    .container-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-top: 60px;
+      z-index: 1;
     }
 
-    @keyframes lantern-1 {
-        from {
-            right: -80px;
-            opacity: 0;
+    .container-moon {
+      z-index: 1;
+      opacity: 1;
+      position: relative;
+      animation: moon 2s 1 ease-in-out;
+      filter: drop-shadow(2px 4px 6px black);
+    }
+
+    .container-shapes {
+      display: flex;
+
+      .container-shape {
+        filter: drop-shadow(4px 3px 5px $secondry-color);
+
+        &:nth-child(1) {
+          transform: translate(0px, -125px) scale(0.5);
+          position: relative;
+          animation: lantern-1 2s 1 ease-in-out;
+
+          .container-shapeImg {
+            animation-delay: 0.1s;
+          }
         }
 
-        to {
+        &:nth-child(2) {
+          transform: translate(0px, -55px) scale(0.65);
+          position: relative;
+          animation: lantern-2 2s 1 ease-in-out;
+
+          .container-shapeImg {
+            animation-delay: 0.5s;
+          }
+        }
+
+        &:nth-child(3) {
+          transform: translate(-5px, -117px) scale(0.58);
+          position: relative;
+          animation: lantern-3 2s 1 ease-in-out;
+
+          .container-shapeImg {
+            animation-delay: 0.7s;
+          }
+        }
+
+        .container-shapeImg {
+          animation: spin 1s infinite alternate ease-in-out;
+          transform-origin: top;
+        }
+      }
+    }
+
+    .container-stars {
+      display: flex;
+
+      .container-star {
+        position: absolute;
+        top: 60%;
+        animation: fade 1s infinite alternate ease-in-out;
+        z-index: -1;
+        filter: drop-shadow(0px 0px 5px $secondry-color);
+
+        &:nth-child(1) {
+          animation-delay: 0.3s;
+
+          .container-starImg {
+            transform: translate(70px, -72px) scale(0.6);
+          }
+        }
+
+        &:nth-child(2) {
+          animation-delay: -0.45s;
+
+          .container-starImg {
+            transform: translate(-30px, -90px) scale(0.8) rotate(45deg);
+          }
+        }
+
+        &:nth-child(3) {
+          animation-delay: 0.1s;
+
+          .container-starImg {
+            transform: translate(172px, -103px) scale(0.7) rotate(-40deg);
+          }
+        }
+
+        &:nth-child(4) {
+          animation-delay: 0.4s;
+
+          .container-starImg {
+            transform: translate(-150px, -50px) scale(0.6) rotate(30deg);
+          }
+        }
+
+        &:nth-child(5) {
+          animation-delay: 0.7s;
+
+          .container-starImg {
+            transform: translate(-10px, -30px) scale(0.9) rotate(107deg);
+          }
+        }
+
+        &:nth-child(6) .container-starImg {
+          transform: translate(60px, -2px) scale(0.85) rotate(156deg);
+        }
+      }
+    }
+  }
+
+  .container-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    margin: 45px 0 15px;
+    position: relative;
+    animation: lantern-3 2s 1 ease-in-out;
+
+    .container-textFrom {
+      display: none;
+      color: white;
+    }
+
+    .container-specialWord {
+      color: $main-color;
+      filter: drop-shadow(0px 0px 5px $secondry-color);
+    }
+  }
+
+  .container-remaining {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    position: relative;
+    animation: lantern-1 2s 1 ease-in-out;
+
+    .container-remainingTime {
+      font-size: 45px;
+      font-weight: 300;
+    }
+  }
+
+  .container--duringRamdan {
+    .container-textTo {
+      display: none;
+    }
+
+    .container-textFrom {
+      display: inline-block;
+    }
+  }
+
+  .prayer {
+    color: $main-color;
+    direction: ltr;
+
+    .prayer-container {
+      font-family: "Fjalla One", sans-serif;
+      position: absolute;
+      right: 20px;
+      top: 20%;
+      text-align: right;
+
+      .city-list {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        outline: none;
+        width: 100%;
+        padding: 5px 10px;
+        background-color: transparent;
+        border: 2px solid $main-color;
+        color: $main-color;
+
+        option {
+          color: #55430c;
+
+          &:disabled {
+            color: #908565;
+          }
+        }
+      }
+
+      .pray-list {
+        font-size: 14px;
+        border: 2px solid $main-color;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0;
+        background-color: #00000066;
+        opacity: 0;
+        visibility: hidden;
+        @include transition();
+
+        .pray-info {
+          position: relative;
+
+          &::after {
+            content: "";
+            height: 2px;
+            width: 100%;
+            background-color: $main-color;
+            position: absolute;
+            bottom: -2px;
             right: 0;
-            opacity: 1;
+          }
+
+          &:last-child::after {
+            display: none;
+          }
+
+          .pray-name {
+            margin: 10px 0;
+          }
+
+          .pray-time {
+            margin-bottom: 10px;
+          }
         }
+      }
+    }
+  }
+
+  .signture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    gap: 5px;
+    animation: lantern-2 2s 1 ease-in-out;
+    color: white;
+    font-size: 16px;
+
+    i {
+      color: #b60101;
     }
 
-    @keyframes lantern-2 {
-        from {
-            bottom: -80px;
-            opacity: 0;
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: $main-color;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      .coloredLetter.space {
+        margin-inline: 2px;
+      }
+      .coloredLetter {
+        animation: glow 2s ease-in-out 2s infinite both alternate;
+        user-select: none;
+
+        @media (max-width: 600px) {
+          filter: none;
         }
 
-        to {
-            bottom: 0;
-            opacity: 1;
+        @keyframes glow {
+          from {
+            filter: drop-shadow(0px 0px 5px #5e4009);
+          }
+          to {
+            filter: drop-shadow(0px 0px 5px $secondry-color);
+          }
         }
+
+        @for $i from 1 through 15 {
+          &:nth-of-type(#{$i}) {
+            animation-delay: #{calc($i / 10 + 2)}s;
+          }
+        }
+      }
     }
+  }
+}
 
-    @keyframes lantern-3 {
-        from {
-            left: -80px;
-            opacity: 0;
-        }
+@keyframes spin {
+  from {
+    transform: rotate(-3deg);
+  }
 
-        to {
-            left: 0;
-            opacity: 1;
-        }
-    }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes moon {
+  from {
+    top: -80px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes lantern-1 {
+  from {
+    right: -80px;
+    opacity: 0;
+  }
+
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes lantern-2 {
+  from {
+    bottom: -80px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes lantern-3 {
+  from {
+    left: -80px;
+    opacity: 0;
+  }
+
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 .imsak,
 .morning-azkar,
 .evening-azkar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  @include transition();
+
+  .over-lay {
     position: absolute;
-    width: 100%;
-    height: 100vh;
     top: 0;
     left: 0;
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
-    @include transition();
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000066;
+  }
 
+  .close {
+    padding: 5px 8px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: $main-color;
+    cursor: pointer;
+    z-index: 1;
+    text-shadow: unset;
+    opacity: 1;
+    float: unset;
+    background-color: $backgroundColor;
+  }
 
-    .over-lay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+  h3 {
+    color: $main-color;
+    padding: 20px;
+    font-size: 36px;
+    border-radius: 10px;
+    background-color: $backgroundColor;
+  }
+
+  .azkar-list {
+    width: 80% !important;
+  }
+
+  .imsak-table,
+  .azkar-list {
+    direction: rtl;
+    padding: 20px;
+    display: block;
+    height: 50vh;
+    width: unset;
+    color: $main-color;
+    font-size: 14px;
+    background-color: $backgroundColor;
+    overflow-y: scroll;
+    border-radius: 10px;
+
+    tbody {
+      tr:hover {
+        color: $secondry-color;
+        background-color: rgba(0, 0, 0, 0.075);
+      }
+    }
+
+    .azkar-info {
+      position: relative;
+      direction: ltr;
+
+      &::after {
+        content: "";
+        height: 2px;
         width: 100%;
-        height: 100%;
-        background-color: #00000066;
-    }
-
-    .close {
-        padding: 5px 8px;
-        border-radius: 5px;
+        background-color: $main-color;
         position: absolute;
-        top: 20px;
-        right: 20px;
-        color: $main-color;
-        cursor: pointer;
-        z-index: 1;
-        text-shadow: unset;
-        opacity: 1;
-        float: unset;
-        background-color: $backgroundColor;
+        bottom: -2px;
+        right: 0;
+      }
 
+      &:last-child::after {
+        display: none;
+      }
+
+      .azkar-name,
+      .azkar-count {
+        font-size: 16px;
+      }
+
+      .azkar-count {
+        color: $secondry-color;
+      }
     }
-
-    h3 {
-        color: $main-color;
-        padding: 20px;
-        font-size: 36px;
-        border-radius: 10px;
-        background-color: $backgroundColor;
-
-    }
-
-    .azkar-list {
-        width: 80% !important;
-    }
-
-    .imsak-table,
-    .azkar-list {
-        direction: rtl;
-        padding: 20px;
-        display: block;
-        height: 50vh;
-        width: unset;
-        color: $main-color;
-        font-size: 14px;
-        background-color: $backgroundColor;
-        overflow-y: scroll;
-        border-radius: 10px;
-
-        tbody {
-            tr:hover {
-                color: $secondry-color;
-                background-color: rgba(0, 0, 0, .075);
-            }
-        }
-
-        .azkar-info {
-            position: relative;
-            direction: ltr;
-
-            &::after {
-                content: "";
-                height: 2px;
-                width: 100%;
-                background-color: $main-color;
-                position: absolute;
-                bottom: -2px;
-                right: 0;
-            }
-
-            &:last-child::after {
-                display: none;
-            }
-
-            .azkar-name,
-            .azkar-count {
-                font-size: 16px;
-            }
-
-            .azkar-count {
-                color: $secondry-color;
-            }
-        }
-
-    }
+  }
 }
 
-
 @media (max-width: 768px) {
-    body {
-        overflow: visible;
+  body {
+    overflow: visible;
+  }
+
+  .main-container {
+    .nav-bar {
+      position: relative;
     }
 
-    .main-container {
-        .nav-bar {
-            position: relative;
-        }
+    .container-a {
+      .container-moon {
+        filter: unset;
+        transform: scale(1);
+        z-index: 2;
+        animation: pause;
+      }
 
-        .container-a {
-            .container-moon {
-                filter: unset;
-                transform: scale(1);
-                z-index: 2;
-                animation: pause;
-            }
+      .container-shapes {
+        z-index: 1;
 
-            .container-shapes {
-                z-index: 1;
+        .container-shape {
+          filter: unset;
 
-                .container-shape {
-                    filter: unset;
-
-                    &:nth-child(1) {
-                        transform: translate(0px, -130px) scale(0.5);
-                        animation: pause;
-
-                    }
-
-                    &:nth-child(2) {
-                        transform: translate(0px, -58px) scale(0.65);
-                        animation: pause;
-
-                    }
-
-                    &:nth-child(3) {
-                        transform: translate(-10px, -148px) scale(0.5);
-                        animation: pause;
-
-                    }
-                }
-            }
-
-            .container-stars {
-                .container-star {
-                    filter: unset;
-                }
-            }
-        }
-
-        .container-text {
-            margin: 0 0 15px;
+          &:nth-child(1) {
+            transform: translate(0px, -130px) scale(0.5);
             animation: pause;
-        }
+          }
 
-        .container-remaining {
+          &:nth-child(2) {
+            transform: translate(0px, -58px) scale(0.65);
             animation: pause;
-        }
+          }
 
-        .prayer {
-
-            .prayer-container {
-                position: relative;
-                left: 0;
-                right: 0;
-                bottom: 20px;
-                top: unset;
-                font-size: 10px;
-
-                .city-list {
-                    width: unset;
-                }
-
-                .pray-list {
-                    padding: 0px;
-
-                    .pray-info {
-                        display: inline-block;
-                        margin: 0 10px;
-
-                        &::after {
-                            display: none;
-                        }
-
-                        .pray-name,
-                        .pray-time {
-                            margin: 5px 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        .signture {
-            padding: 0 0 15px 0;
+          &:nth-child(3) {
+            transform: translate(-10px, -148px) scale(0.5);
             animation: pause;
+          }
         }
+      }
+
+      .container-stars {
+        .container-star {
+          filter: unset;
+        }
+      }
     }
 
-    .imsak {
-        .imsak-table {
-            font-size: 12px;
-            width: 80%;
-        }
+    .container-text {
+      margin: 0 0 15px;
+      animation: pause;
     }
+
+    .container-remaining {
+      animation: pause;
+    }
+
+    .prayer {
+      .prayer-container {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 20px;
+        top: unset;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .city-list {
+          width: unset;
+        }
+
+        .pray-list {
+          padding: 5px 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: fit-content;
+          .pray-info {
+            margin: 0 10px;
+
+            &::after {
+              display: none;
+            }
+
+            .pray-name,
+            .pray-time {
+              margin: 5px 0;
+            }
+          }
+        }
+      }
+    }
+
+    .signture {
+      padding: 0 0 15px 0;
+      animation: pause;
+    }
+  }
+
+  .imsak {
+    .imsak-table {
+      font-size: 12px;
+      width: 80%;
+    }
+  }
 }

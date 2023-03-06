@@ -45,7 +45,7 @@ body {
 .main-container .nav-bar .nav-list .nav-li:last-child .zekr-list {
   position: absolute;
   width: 120px;
-  background-color: #00000073;
+  background-color: rgba(0, 0, 0, 0.4509803922);
   padding: 10px;
   border-radius: 10px;
   transform: translateY(15px);
@@ -259,7 +259,9 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin: 0;
-  background-color: #00000066;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -290,7 +292,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row-reverse;
   position: relative;
+  gap: 5px;
   animation: lantern-2 2s 1 ease-in-out;
   color: white;
   font-size: 16px;
@@ -302,8 +306,76 @@ body {
   text-decoration: none;
   font-weight: 700;
   color: wheat;
-  filter: drop-shadow(0px 0px 5px #e3a023);
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }
+.main-container .signture a .coloredLetter.space {
+  margin-inline: 2px;
+}
+.main-container .signture a .coloredLetter {
+  animation: glow 2s ease-in-out 2s infinite both alternate;
+  user-select: none;
+}
+@media (max-width: 600px) {
+  .main-container .signture a .coloredLetter {
+    filter: none;
+  }
+}
+@keyframes glow {
+  from {
+    filter: drop-shadow(0px 0px 5px #5e4009);
+  }
+  to {
+    filter: drop-shadow(0px 0px 5px #e3a023);
+  }
+}
+.main-container .signture a .coloredLetter:nth-of-type(1) {
+  animation-delay: 2.1s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(2) {
+  animation-delay: 2.2s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(3) {
+  animation-delay: 2.3s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(4) {
+  animation-delay: 2.4s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(5) {
+  animation-delay: 2.5s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(6) {
+  animation-delay: 2.6s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(7) {
+  animation-delay: 2.7s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(8) {
+  animation-delay: 2.8s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(9) {
+  animation-delay: 2.9s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(10) {
+  animation-delay: 3s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(11) {
+  animation-delay: 3.1s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(12) {
+  animation-delay: 3.2s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(13) {
+  animation-delay: 3.3s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(14) {
+  animation-delay: 3.4s;
+}
+.main-container .signture a .coloredLetter:nth-of-type(15) {
+  animation-delay: 3.5s;
+}
+
 @keyframes spin {
   from {
     transform: rotate(-3deg);
@@ -360,7 +432,6 @@ body {
     opacity: 1;
   }
 }
-
 .imsak,
 .morning-azkar,
 .evening-azkar {
@@ -390,7 +461,7 @@ body {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: #00000066;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .imsak .close,
 .morning-azkar .close,
@@ -406,7 +477,7 @@ body {
   text-shadow: unset;
   opacity: 1;
   float: unset;
-  background-color: #000000eb;
+  background-color: rgba(0, 0, 0, 0.9215686275);
 }
 .imsak h3,
 .morning-azkar h3,
@@ -415,7 +486,7 @@ body {
   padding: 20px;
   font-size: 36px;
   border-radius: 10px;
-  background-color: #000000eb;
+  background-color: rgba(0, 0, 0, 0.9215686275);
 }
 .imsak .azkar-list,
 .morning-azkar .azkar-list,
@@ -435,7 +506,7 @@ body {
   width: unset;
   color: wheat;
   font-size: 14px;
-  background-color: #000000eb;
+  background-color: rgba(0, 0, 0, 0.9215686275);
   overflow-y: scroll;
   border-radius: 10px;
 }
@@ -506,7 +577,6 @@ body {
   body {
     overflow: visible;
   }
-
   .main-container .nav-bar {
     position: relative;
   }
@@ -550,32 +620,39 @@ body {
     right: 0;
     bottom: 20px;
     top: unset;
-    font-size: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .main-container .prayer .prayer-container .city-list {
     width: unset;
   }
   .main-container .prayer .prayer-container .pray-list {
-    padding: 0px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
   }
   .main-container .prayer .prayer-container .pray-list .pray-info {
-    display: inline-block;
     margin: 0 10px;
   }
   .main-container .prayer .prayer-container .pray-list .pray-info::after {
     display: none;
   }
   .main-container .prayer .prayer-container .pray-list .pray-info .pray-name,
-.main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
+  .main-container .prayer .prayer-container .pray-list .pray-info .pray-time {
     margin: 5px 0;
   }
   .main-container .signture {
     padding: 0 0 15px 0;
     animation: pause;
   }
-
   .imsak .imsak-table {
     font-size: 12px;
     width: 80%;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
