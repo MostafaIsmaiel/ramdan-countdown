@@ -134,6 +134,7 @@ $(document).ready(function () {
   // Fade out/in ramdan imsak
   imsakBtn.on("click", function () {
     imsak.css({
+      display: "flex",
       opacity: "1",
       visibility: "visible",
     });
@@ -159,6 +160,7 @@ $(document).ready(function () {
   // Fade out/in morning azkar
   morningAzkarBtn.on("click", function () {
     morningAzkar.css({
+      display: "flex",
       opacity: "1",
       visibility: "visible",
     });
@@ -184,6 +186,7 @@ $(document).ready(function () {
   // Fade out/in evening azkar
   eveningAzkarBtn.on("click", function () {
     eveningAzkar.css({
+      display: "flex",
       opacity: "1",
       visibility: "visible",
     });

@@ -120,7 +120,7 @@ body {
   display: flex;
 }
 .main-container .container-a .container-shapes .container-shape {
-  filter: drop-shadow(4px 3px 5px #e3a023);
+  filter: drop-shadow(0px 0px 15px rgba(227, 160, 35, 0.4745098039));
 }
 .main-container .container-a .container-shapes .container-shape:nth-child(1) {
   transform: translate(0px, -125px) scale(0.5);
@@ -435,7 +435,7 @@ body {
 .imsak,
 .morning-azkar,
 .evening-azkar {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -445,8 +445,6 @@ body {
   top: 0;
   left: 0;
   z-index: 10;
-  opacity: 0;
-  visibility: hidden;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
